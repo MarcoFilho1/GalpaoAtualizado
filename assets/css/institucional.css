@@ -100,6 +100,13 @@ nav ul li a {
     display: block;
 }
 
+nav ul li a:hover {
+  background-color: #1f94f4;
+  color: white;
+  border-radius: 8px;
+}
+
+
 nav ul li:hover .dropbtn {
     background-color: #1f94f4;
     border-radius: 8px;
