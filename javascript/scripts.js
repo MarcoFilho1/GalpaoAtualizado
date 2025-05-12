@@ -1,0 +1,25 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieNotice = document.querySelector('.cookie-notice');
+    const cookieButton = cookieNotice.querySelector('button');
+
+    // Verifica se o usuário já aceitou o cookie
+    if (!localStorage.getItem('cookieAccepted')) {
+        cookieNotice.style.display = 'block';
+    }
+
+    // Esconde o aviso de cookies e salva no localStorage
+    cookieButton.addEventListener('click', function() {
+        cookieNotice.style.display = 'none';
+        localStorage.setItem('cookieAccepted', 'true');
+    });
+});
+
+function showDetails(element) {
+    const details = element.querySelector('.galpao-details');
+    details.style.display = 'block';
+}
+
+function hideDetails(element) {
+    const details = element.querySelector('.galpao-details');
+    details.style.display = 'none';
+}
