@@ -22,6 +22,11 @@ header {
     padding: 20px;
 }
 main{
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
   padding: 80px;
 }
 
@@ -35,6 +40,7 @@ main{
 
 .logo img {
     width: 120px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.152));
 }
 
 nav ul {
@@ -171,12 +177,12 @@ h1::before {
   display: inline-block;
   width: 5px;
   height: 35px;
-  background-color: blue;
+  background-color: #1f94f4;
   margin-right: 10px;
 }
 
 strong .destaque {
-  color: blue;
+  color: #1f94f4;
 }
 
 .intro {
@@ -218,11 +224,11 @@ strong .destaque {
 }
 
 .card {
-  background-color: white; /* Azul bonito */
+  background-color: white; 
   color: black;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.492);
   flex: 1;
   min-width: 300px;
   max-width: 32%; /* 3 cards por linha no desktop */
@@ -246,7 +252,7 @@ strong .destaque {
   display: inline-block;
   width: 5px;
   height: 25px;
-  background-color: blue;
+  background-color: #1f94f4;
   margin-right: 10px;
   border-radius: 2px;
 }
@@ -283,7 +289,7 @@ strong .destaque {
 }
 
 .cookie-notice button {
-    background-color: #f47c1f;
+    background-color: #1f94f4;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -291,7 +297,7 @@ strong .destaque {
 }
 
 .cookie-notice button:hover {
-    background-color: #e66a1e;
+    background-color: #1f94f4;
 }
 
 /* Estilo do rodapé */

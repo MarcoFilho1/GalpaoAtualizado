@@ -16,6 +16,11 @@ body {
 }
 
 /* Estilos do cabeçalho */
+
+.logo img {
+    width: 120px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.152));
+}
 header {
     background-color: #000;
     color: white;
