@@ -1,12 +1,13 @@
-<!-- Exemplo de galpao-lonado.html -->
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galpão Lonado - Petros Galpões</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/stylegalpao_lonado.css">
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
         <nav>
             <ul>
@@ -17,17 +18,34 @@
         </nav>
     </header>
 
+    <!-- Seção do Produto -->
     <section class="produto-detalhado">
-        <h1>Galpão Lonado</h1>
-        <img src="assets/img/galpao-lonado.jpg" alt="Galpão Lonado">
-        <p>Descrição detalhada do galpão lonado, suas aplicações, vantagens, desvantagens, etc.</p>
+        <div class="produto-grid">
+            <div class="produto-imagem">
+                <img src="assets/images/imagem-galpao-lonado.jpeg" alt="Galpão Lonado">
+            </div>
+            <div class="produto-descricao">
+                <h1>Galpão Lonado</h1>
+                <p>
+                    Os galpões lonados são uma excelente opção para armazenamento temporário e projetos de curto prazo.
+                    Oferecem grande resistência contra intempéries, são fáceis de montar e possuem custo acessível.
+                </p>
+                <ul>
+                    <li>✔️ Fácil instalação e desmontagem</li>
+                    <li>✔️ Estrutura resistente e versátil</li>
+                    <li>✔️ Custo-benefício excelente para projetos temporários</li>
+                    <li>✔️ Personalizável para diferentes necessidades</li>
+                </ul>
+                <a href="#" class="button">Entrar em contato</a>
+            </div>
+        </div>
     </section>
 
     <!-- Seção de detalhes finais -->
     <section class="detalhes-final">
         <h2>Mais Informações</h2>
         <p>Saiba mais sobre como escolher o galpão ideal para o seu projeto, com detalhes adicionais sobre estrutura, durabilidade e aplicação.</p>
-        <button>Entrar em contato</button>
+        <button class="button">Entre em contato</button>
     </section>
 
     <script src="javascript/scripts.js"></script>
