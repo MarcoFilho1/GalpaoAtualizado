@@ -139,6 +139,10 @@ nav ul li:hover .dropbtn {
     transform: translateX(-50%);
     text-align: center;
     color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px 40px;
+
 }
 
 .hero-text h1 {
