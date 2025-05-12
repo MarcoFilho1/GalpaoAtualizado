@@ -324,3 +324,11 @@ nav ul li a:hover, .active {
 .detalhes-final button:hover {
     background-color: #e66a1e;
 }
+
+
+/* Estilo do rodapé*/
+
+.rodape {
+    background-color: #000;
+    color: white;
+}

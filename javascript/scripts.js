@@ -23,3 +23,9 @@ function hideDetails(element) {
     const details = element.querySelector('.galpao-details');
     details.style.display = 'none';
 }
+
+window.addEventListener('load', function () {
+    document.body.classList.remove('fade-out');
+    document.body.classList.add('fade-in');
+});
+
