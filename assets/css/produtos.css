@@ -13,6 +13,13 @@ body {
     letter-spacing: 0.5px;
     font-family: 'Montserrat', sans-serif;
     background-color: #f5f5f5;
+    
+}
+
+main{
+    width: 900px;
+    margin: auto;
+    justify-content: center;
 }
 
 /* Estilos do cabeçalho */
@@ -318,13 +325,13 @@ nav ul li a:hover, .active {
 }
 
 .galpao-details .button:hover {
-    background-color: #166ea6;
+    background-color: #1f94f4;
 }
 
 /* Detalhes finais na página do produto */
 .detalhes-final {
     background-color: #f5f5f5;
-    padding: 40px;
+    padding: 70px;
     text-align: center;
     margin-top: 40px;
     border-radius: 10px;
@@ -355,7 +362,7 @@ nav ul li a:hover, .active {
 }
 
 .detalhes-final button:hover {
-    background-color: #e66a1e;
+    background-color: #1f94f4;
 }
 
 
