@@ -14,11 +14,11 @@
             <div class="logo">
                 <img src="assets/images/logogalpao-removebg-preview.png" alt="Logo Petros Galpões">
             </div>
-            <nav>
+            <!-- Menu Desktop-->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="institucional.html">Institucional</a></li>
-                    <!-- Menu Produtos com dropdown -->
                     <li class="dropdown">
                         <a href="produtos.html" class="dropbtn">Produtos</a>
                         <div class="dropdown-content">
@@ -31,6 +31,22 @@
                     <li><a href="FAQ.html">FAQ</a></li>
                 </ul>
             </nav>
+            <!-- Ícone do Menu Hamburguer -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <!-- Navegação -->
+            <nav id="mobile-menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="institucional.html">Institucional</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="quem_somos.html">Quem somos</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </nav>
+    
             <div class="contact">
                 <i class="fa fa-phone"></i>
                 <span>Contate-nos: (81)991805129</span>
@@ -43,7 +59,7 @@
     <main>
         <section class="hero">
             <div class="hero-image">
-                <img src="assets/images/galpaomenu.jpeg" alt="Galpão">
+                <img src="assets/images/galpaomenu.jpeg" class="overlay-image" alt="Galpão">
             </div>
             <div class="hero-description">
                 <h1>Construa seu Galpão com a Petros</h1>
