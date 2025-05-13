@@ -29,3 +29,11 @@ window.addEventListener('load', function () {
     document.body.classList.add('fade-in');
 });
 
+function toggleMenu() {
+    const menu = document.getElementById("mobile-menu");
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
