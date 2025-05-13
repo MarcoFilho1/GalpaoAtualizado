@@ -219,20 +219,19 @@ nav ul li:hover .dropbtn {
     }
 
     .hero-image {
-        width: 100%;
-        height: 100vh;
+        height: 50vh; /* Ajusta altura */
+        background-image: url('assets/images/galpaomenu.jpeg'); /* Caminho corrigido */
         background-size: cover;
-        background-position: center center;
-        background-image: url('assets/images/galpaomenu.jpeg');
-    }
+        background-position: center;
+      }
 
     .hero-description {
         width: 100%;
-        padding: 20px;
+        padding: 25px;
     }
 
     .hero-description h1 {
-        font-size: 1.8rem; /* Ajuste o tamanho da fonte em telas pequenas */
+        font-size: 1.5rem; /* Ajuste o tamanho da fonte em telas pequenas */
     }
 
     .hero-description p {
@@ -241,6 +240,13 @@ nav ul li:hover .dropbtn {
 
     .hero-image img {
         max-width: 100%; /* Garante que a imagem ocupe toda a largura possível */
+    }
+    nav {
+        display: none; /* Esconde o menu principal */
+    }
+
+    .hamburger {
+        display: block; /* Mostra o ícone hambúrguer */
     }
 }
 
@@ -271,16 +277,6 @@ nav ul li:hover .dropbtn {
     font-size: 24px;
     color: white;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    nav {
-        display: none; /* Esconde o menu principal */
-    }
-
-    .hamburger {
-        display: block; /* Mostra o ícone hambúrguer */
-    }
 }
 
 #mobile-menu ul {
@@ -523,7 +519,36 @@ nav ul li a:hover, .active {
 }
 
 
-
+/* Adicione estas regras no final do seu CSS */
+@media (max-width: 768px) {
+    header {
+      padding: 12px 15px; /* Reduz o padding geral */
+    }
+  
+    .header-container {
+      gap: 10px; /* Espaço entre elementos */
+    }
+  
+    .logo img {
+      width: 90px; /* Reduz o tamanho da logo */
+    }
+  
+    .contact {
+      font-size: 14px; /* Reduz tamanho do texto */
+      margin-top: 5px;
+    }
+  
+    .hamburger {
+      font-size: 20px; /* Reduz ícone hambúrguer */
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  
+    #mobile-menu {
+      top: 60px; /* Ajusta posição do menu mobile */
+    }
+  }
 
 
 
