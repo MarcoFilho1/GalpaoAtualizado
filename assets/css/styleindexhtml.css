@@ -123,7 +123,7 @@ nav ul li:hover .dropbtn {
 
 /* Estilos do conteúdo principal */
 .hero {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr; /* 50% para cada lado */
     height: 100vh;
     opacity: 0;  /* Torna invisível inicialmente */
