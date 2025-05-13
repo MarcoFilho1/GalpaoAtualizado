@@ -125,7 +125,7 @@ nav ul li:hover .dropbtn {
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 50% para cada lado */
-    height: 100vh;
+    height: 100px;
     opacity: 0;  /* Torna invisível inicialmente */
     animation: fadeIn 2s forwards; /* Aplica o efeito de fade-in */
 }
