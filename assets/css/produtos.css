@@ -17,9 +17,10 @@ body {
 }
 
 main{
-    width: 900px;
+    max-width: 900px;
+    width: 100%;
     margin: auto;
-    justify-content: center;
+    padding: 20px;
 }
 
 /* Estilos do cabeçalho */
@@ -371,4 +372,76 @@ nav ul li a:hover, .active {
 .rodape {
     background-color: #000;
     color: white;
+}
+
+
+/* css para telas pequenas */
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contact {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact i {
+        font-size: 18px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .hero-image, .hero-description {
+        height: auto;
+        padding: 20px;
+    }
+
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .galpao-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detalhes-final {
+        padding: 40px 20px;
+    }
+
+    footer.rodape {
+        padding: 20px;
+        font-size: 14px;
+        text-align: center;
+    }
 }
