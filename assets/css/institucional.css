@@ -310,9 +310,11 @@ strong .destaque {
 }
 
 /* Estilo do rodapé */
-.rodape {
+footer.rodape {
   background-color: #000;
   color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 body.fade-out {
   opacity: 0;
