@@ -13,7 +13,7 @@ body {
     letter-spacing: 0.5px;
     font-family: 'Montserrat', sans-serif;
     background-color: #f5f5f5;
-    
+    padding-top: 140px;
 }
 
 main{
@@ -25,6 +25,10 @@ main{
 
 /* Estilos do cabeçalho */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #000;
     color: white;
     padding: 20px;

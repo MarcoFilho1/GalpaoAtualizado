@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    padding-top: 140px; 
+}
+
+/* Estilos do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000;
+    color: white;
+    padding: 20px;
+}
+main{
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    padding: 45px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 120px;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.152));
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 8px 15px; /* Padding fixo em todos os momentos */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Menu dropdown Produtos */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 200px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Tornar o dropdown visível com transição */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, padding-left 0.3s; /* Transição suave */
+}
+
+/* Efeito hover nas opções */
+.dropdown-content a:hover {
+    background-color: #575757; /* Cor de fundo mais clara no hover */
+    padding-left: 14px; /* Leve deslocamento à esquerda para o hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li a:hover {
+  background-color: #1f94f4;
+  color: white;
+  border-radius: 8px;
+}
+
+
+nav ul li:hover .dropbtn {
+    background-color: #1f94f4;
+    border-radius: 8px;
+}
+
+/* Contato no cabeçalho */
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: white;
+}
+
+.contact i {
+    color: #1f94f4;
+    font-size: 20px;
+}
+
+.contact span {
+    color: white;
+}
+
+
+
+
+
+
+/* Estilo para o aviso de cookies */
+.cookie-notice {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+}
+
+.cookie-notice button {
+    background-color: #1f94f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cookie-notice button:hover {
+    background-color: #1f94f4;
+}
+
+/* Estilo do rodapé */
+.rodape {
+  background-color: #000;
+  color: white;
+}
+body.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}
