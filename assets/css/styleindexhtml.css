@@ -359,22 +359,27 @@ nav ul li:hover .dropbtn {
 
 /* Estilo para o aviso de cookies */
 .cookie-notice {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: none;
+    background-color: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 10px 10px 0 0;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  transform: translateX(-50%);
 }
 
 .cookie-notice button {
-    background-color: #f47c1f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    background-color: #1f94f4;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .cookie-notice button:hover {
@@ -521,9 +526,11 @@ nav ul li a:hover, .active {
 
 /* Estilo do rodapé*/
 
-.rodape {
+footer.rodape {
     background-color: #000;
     color: white;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 

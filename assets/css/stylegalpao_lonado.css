@@ -215,7 +215,7 @@ main {
 /* RODAPÉ */
 
 footer.rodape {
-  background-color: #000;
+   background-color: #000;
   color: white;
   padding: 40px 20px;
   text-align: center;
@@ -223,6 +223,8 @@ footer.rodape {
 
 /* RESPONSIVO */
 
+
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .descricao-produto {
     flex-direction: column;
@@ -259,4 +261,5 @@ footer.rodape {
     font-size: 14px;
     flex-direction: column;
   }
+
 }

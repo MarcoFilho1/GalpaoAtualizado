@@ -287,14 +287,17 @@ strong .destaque {
 
 /* Estilo para o aviso de cookies */
 .cookie-notice {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: none;
+    background-color: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 10px 10px 0 0;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  transform: translateX(-50%);
 }
 
 .cookie-notice button {
@@ -310,9 +313,11 @@ strong .destaque {
 }
 
 /* Estilo do rodapé */
-.rodape {
+footer.rodape {
   background-color: #000;
   color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 body.fade-out {
   opacity: 0;
