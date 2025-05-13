@@ -1,183 +1,262 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-/* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: 0.5px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f5f5f5;
-    padding-top: 140px; 
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding-top: 140px;
+  line-height: 1.6;
 }
 
-/* Estilos do cabeçalho */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #000;
-    color: white;
-    padding: 20px;
-}
-main{
-    max-width: 900px;
-    width: 100%;
-    margin: auto;
-    padding: 45px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #000;
+  color: white;
+  padding: 20px;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo img {
-    width: 120px;
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.152));
+  width: 120px;
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-nav ul li {
-    margin-right: 20px;
-    
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    padding: 8px 15px; /* Padding fixo em todos os momentos */
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+nav a:hover {
+  background-color: #1f94f4;
 }
 
-/* Menu dropdown Produtos */
 .dropdown {
-    position: relative;
+  position: relative;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    min-width: 200px;
-    z-index: 1;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
-    border-radius: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1; /* Tornar o dropdown visível com transição */
+  display: none;
+  position: absolute;
+  background-color: #333;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 999;
 }
 
 .dropdown-content a {
-    color: white;
-    padding: 8px 20px;
-    text-decoration: none;
-    display: block;
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s, padding-left 0.3s; /* Transição suave */
-}
-
-/* Efeito hover nas opções */
-.dropdown-content a:hover {
-    background-color: #575757; /* Cor de fundo mais clara no hover */
-    padding-left: 14px; /* Leve deslocamento à esquerda para o hover */
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  transition: background-color 0.3s;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-nav ul li a:hover {
-  background-color: #1f94f4;
-  color: white;
-  border-radius: 8px;
+.dropdown-content a:hover {
+  background-color: #575757;
 }
 
-
-nav ul li:hover .dropbtn {
-    background-color: #1f94f4;
-    border-radius: 8px;
-}
-
-/* Contato no cabeçalho */
 .contact {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
 }
 
 .contact i {
-    color: #1f94f4;
-    font-size: 20px;
+  color: #1f94f4;
 }
 
-.contact span {
-    color: white;
+/* CONTEÚDO */
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
+.intro_container {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
+.intro_container h1 {
+  font-size: 2.5rem;
+  color: #1f94f4;
+  margin-bottom: 10px;
+}
 
+.intro_container p {
+  font-size: 1.2rem;
+  color: #555;
+}
 
+.descricao-produto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  margin-top: 40px;
+}
 
+.descricao-produto .texto {
+  flex: 1 1 50%;
+}
 
-/* Estilo para o aviso de cookies */
+.descricao-produto .imagem {
+  flex: 1 1 40%;
+}
+
+.descricao-produto img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.vantagens {
+  margin-top: 60px;
+}
+
+.vantagens h2 {
+  font-size: 2rem;
+  color: #1f94f4;
+  margin-bottom: 20px;
+}
+
+.vantagens ul {
+  list-style: disc inside;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.cta {
+  background-color: #1f94f4;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+  border-radius: 10px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta a.botao {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: white;
+  color: #1f94f4;
+  padding: 12px 30px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.cta a.botao:hover {
+  background-color: #f0f0f0;
+}
+
+/* COOKIES */
+
 .cookie-notice {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: none;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .cookie-notice button {
-    background-color: #1f94f4;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+  background-color: #1f94f4;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.cookie-notice button:hover {
-    background-color: #1f94f4;
-}
+/* RODAPÉ */
 
-/* Estilo do rodapé */
-.rodape {
+footer.rodape {
   background-color: #000;
   color: white;
-}
-body.fade-out {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-body.fade-in {
-  opacity: 1;
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .descricao-produto {
+    flex-direction: column;
+  }
+
+  .descricao-produto .texto,
+  .descricao-produto .imagem {
+    flex: 1 1 100%;
+  }
+
+  .intro_container h1 {
+    font-size: 2rem;
+  }
+
+  .vantagens ul {
+    padding-left: 20px;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact {
+    font-size: 14px;
+    flex-direction: column;
+  }
 }
