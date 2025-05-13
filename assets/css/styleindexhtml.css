@@ -225,7 +225,7 @@ nav ul li:hover .dropbtn {
 
     .hero-image {
         height: 50vh; /* Ajusta altura */
-        background-image: url('assets/images/galpaomenu.jpeg'); /* Caminho corrigido */
+        background-image: url('../images/galpaomenu.jpeg'); /* Caminho corrigido */
         background-size: cover;
         background-position: center;
       }
@@ -278,10 +278,13 @@ nav ul li:hover .dropbtn {
     transform: scaleY(1);
 }
 .hamburger {
-    display: none;
+    display: block;
     font-size: 24px;
     color: white;
     cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
 #mobile-menu ul {
