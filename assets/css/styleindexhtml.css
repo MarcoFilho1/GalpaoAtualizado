@@ -30,6 +30,28 @@ header {
     margin: 0 auto;
 }
 
+/* Responsividade para o cabeçalho */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .contact {
+        margin-top: 10px;
+    }
+}
+
+
 .logo img {
     width: 120px;
     filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.152));
@@ -94,6 +116,19 @@ nav ul li a {
     padding-left: 14px; /* Leve deslocamento à esquerda para o hover */
 }
 
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -140,17 +175,61 @@ nav ul li:hover .dropbtn {
     }
 }
 
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5; /* Cor de fundo enquanto a imagem carrega */
-    background-image: url('../images/galpaomenu.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    
+
+/* AJUSTES FLEX PARA O DESKTOP */
+@media (min-width: 768px) {
+    .hero {
+        height: 70vh;
+        display: flex;
+    }
+
+    .hero-image {
+        height: 100%;
+        width: 100%;
+        background-image: url('../images/galpaomenu.jpeg'); /* Verifique se o caminho está correto */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-image img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-description {
+        max-width: 600px;
+        z-index: 3;
+    }
 }
+
+/* Ajuste da hero image para telas pequenas */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-description {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
 
 .hero-image img {
     max-width: 90%; /* Limita a largura a 90% do espaço */
