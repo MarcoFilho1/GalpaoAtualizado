@@ -1,0 +1,72 @@
+/* assets/css/contato.css */
+
+html { scroll-behavior: smooth; }
+
+/* Contato Section */
+section#contato {
+    background: linear-gradient(to bottom, #000000, #111827);
+    color: white;
+    padding: 1rem 0.5rem;
+}
+
+section#contato .container {
+    max-width: 64rem;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid #1e3a8a;
+}
+
+section#contato h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #facc15;
+    margin-bottom: 1rem;
+}
+
+section#contato .form-group {
+    margin-bottom: 0.5rem;
+}
+
+section#contato .form-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+section#contato .form-row .form-group {
+    flex: 1;
+}
+
+section#contato label {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #93c5fd;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+section#contato input,
+section#contato textarea,
+section#contato select {
+    width: 100%;
+    background-color: #111827;
+    border: 1px solid #1e3a8a;
+    border-radius: 0.375rem;
+    padding: 0.4rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+section#contato button[type="submit"] {
+    background-color: #1d4ed8;
+    color: #facc15;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #3b82f6;
+    cursor: pointer;
+    margin: 0.75rem auto 0;
+    display: block;
+    font-size: 0.9rem;
+}
