@@ -33,3 +33,28 @@ function toggleMenu() {
     const menu = document.getElementById("mobile-menu");
     menu.classList.toggle("active");
 }
+
+// Script para controlar a rotação das imagens
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.carousel-image');
+    let currentIndex = 0;
+    const totalImages = images.length;
+
+    function changeImage() {
+        // Esconde todas as imagens
+        images.forEach(image => {
+            image.style.display = 'none';
+        });
+
+        // Mostra a imagem atual
+        images[currentIndex].style.display = 'block';
+
+        // Atualiza o índice da imagem
+        currentIndex = (currentIndex + 1) % totalImages;
+    }
+
+    // Inicializa com a primeira imagem
+    changeImage();
+    // Troca a imagem a cada 5 segundos
+    setInterval(changeImage, 5000);
+});
