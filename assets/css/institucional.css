@@ -26,6 +26,7 @@ header {
     color: white;
     padding: 20px;
 }
+
 main{
     max-width: 900px;
     width: 100%;
@@ -39,30 +40,30 @@ main{
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo img {
-    width: 120px;
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.152));
+    width: 100px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.152));
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
+    gap: 15x;
 }
 
 nav ul li {
-    margin-right: 20px;
-    
+    position: relative;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    position: relative;
-    padding: 8px 15px; /* Padding fixo em todos os momentos */
-    border-radius: 8px;
+    padding: 8px 12px; /* Padding fixo em todos os momentos */
+    border-radius: 6px;
     transition: background-color 0.3s ease;
 }
 
