@@ -14,6 +14,7 @@ body {
   line-height: 1.6;
 }
 
+/* ======= HEADER REFEITO ======= */
 header {
   position: fixed;
   top: 0;
@@ -21,7 +22,7 @@ header {
   z-index: 1000;
   background-color: #000;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .header-container {
@@ -30,31 +31,58 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo img {
   width: 120px;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  padding-left: 0;
+  margin: 0;
+  gap: 10px;
 }
 
-nav a {
-  text-decoration: none;
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
   color: white;
+  text-decoration: none;
   font-weight: 600;
   padding: 8px 15px;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
 }
 
 nav a:hover {
   background-color: #1f94f4;
+  transform: translateX(5px);
 }
 
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -69,36 +97,54 @@ nav a:hover {
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 999;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 15px;
-  color: white;
-  transition: background-color 0.3s;
+  padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+  opacity: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+.dropdown:hover .dropdown-content a {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .dropdown-content a:hover {
   background-color: #575757;
+  transform: translateX(5px);
 }
 
+/* Contato */
 .contact {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 16px;
+  color: white;
 }
 
 .contact i {
   color: #1f94f4;
 }
 
-/* CONTEÚDO */
+.contact span {
+  color: white;
+}
 
+/* MAIN */
 main {
   max-width: 1000px;
   margin: auto;
@@ -206,7 +252,6 @@ main {
 }
 
 /* COOKIES */
-
 .cookie-notice {
   background-color: rgba(0,0,0,0.9);
   color: white;
@@ -232,7 +277,6 @@ main {
 }
 
 /* RODAPÉ */
-
 footer.rodape {
   background-color: #000;
   color: white;
@@ -241,7 +285,6 @@ footer.rodape {
 }
 
 /* RESPONSIVO */
-
 @media (max-width: 768px) {
   .descricao-produto {
     flex-direction: column;
@@ -260,10 +303,9 @@ footer.rodape {
     justify-content: center;    
   }
 
-  .intro-img img{
+  .intro-img img {
     max-width: 90%;
   }
-
 
   .vantagens ul {
     padding-left: 20px;
@@ -283,8 +325,16 @@ footer.rodape {
     align-items: flex-start;
   }
 
+  .header-left,
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
   .contact {
     font-size: 14px;
     flex-direction: column;
+    align-items: flex-start;
   }
 }
