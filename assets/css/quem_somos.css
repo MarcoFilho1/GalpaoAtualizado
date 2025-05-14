@@ -143,3 +143,99 @@ nav a:hover::after {
 .contact span {
   color: white;
 }
+
+.intro-sobre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.texto-sobre {
+  flex: 1 1 55%;
+}
+
+.texto-sobre h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-left: 6px solid #1f94f4;
+  padding-left: 10px;
+}
+
+.texto-sobre p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.img-sobre {
+  flex: 1 1 40%;
+}
+
+.img-sobre img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* MISSÃO, VISÃO, VALORES */
+.valores-missao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.card-sobre {
+  flex: 1 1 30%;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-sobre:hover {
+  transform: translateY(-5px);
+}
+
+.card-sobre h2 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #1f94f4;
+}
+
+.card-sobre p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.rodape {
+  background-color: #000;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .intro-sobre {
+    flex-direction: column;
+  }
+
+  .valores-missao {
+    flex-direction: column;
+  }
+
+  .card-sobre {
+    width: 100%;
+  }
+
+  .texto-sobre, .img-sobre {
+    width: 100%;
+  }
+}
