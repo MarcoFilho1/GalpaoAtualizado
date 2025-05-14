@@ -34,27 +34,30 @@ function toggleMenu() {
     menu.classList.toggle("active");
 }
 
-// Script para controlar a rotação das imagens
-document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.carousel-image');
-    let currentIndex = 0;
-    const totalImages = images.length;
+document.addEventListener('DOMContentLoaded', () => {
+  const track  = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  let index    = 0;
 
-    function changeImage() {
-        // Esconde todas as imagens
-        images.forEach(image => {
-            image.style.display = 'none';
-        });
+  // Inicializa a variável --bg em cada slide
+    slides.forEach(slide => {
+        const bgUrl = slide.getAttribute('data-bg');
+        slide.style.setProperty('--bg', `url(/GalpaoAtualizado/${bgUrl})`);
+    });
 
-        // Mostra a imagem atual
-        images[currentIndex].style.display = 'block';
+  // Função de movimento
+  const moveTo = (i) => {
+    track.style.transform = `translateX(-${i * 100}%)`;
+    index = i;
+  };
 
-        // Atualiza o índice da imagem
-        currentIndex = (currentIndex + 1) % totalImages;
-    }
+  document.querySelector('.prev-btn').addEventListener('click', () => {
+    const newIndex = index <= 0 ? slides.length - 1 : index - 1;
+    moveTo(newIndex);
+  });
 
-    // Inicializa com a primeira imagem
-    changeImage();
-    // Troca a imagem a cada 5 segundos
-    setInterval(changeImage, 5000);
+  document.querySelector('.next-btn').addEventListener('click', () => {
+    const newIndex = index >= slides.length - 1 ? 0 : index + 1;
+    moveTo(newIndex);
+  });
 });
