@@ -223,27 +223,7 @@ footer.rodape {
 /* Navegação para desktop */
 #navbar {
   display: flex;
-}
-
-#navbar ul {
-  display: flex;
-  gap: 15px;
-}
-
-#navbar ul li {
-  list-style: none;
-}
-
-#navbar ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-#navbar ul li a:hover {
-  background: #1f94f4;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
 /* Estilo para Mobile */
@@ -254,7 +234,7 @@ footer.rodape {
 
   /* Esconde o menu principal no mobile */
   #navbar {
-    display: none;
+    display: block;
     position: absolute;
     top: 60px;
     right: 0;
@@ -263,6 +243,10 @@ footer.rodape {
     border-radius: 0 0 8px 8px;
     overflow: hidden;
     z-index: 1000;
+
+    /* Animação */
+    max-height: 0;
+    opacity: 0;
   }
 
   #navbar ul {
@@ -283,6 +267,40 @@ footer.rodape {
 
   /* Quando ativo, o menu expande */
   #navbar.active {
+    max-height: 500px;  /* Tamanho máximo da expansão, ajustável */
+    opacity: 1;
+  }
+
+  /* Estilo para Dropdown no Mobile */
+  .dropdown-content {
+    position: relative;
+    background-color: #222;
+    margin-top: 5px;
+    border-radius: 4px;
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
     display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    border-bottom: 1px solid #333;
+  }
+}
+
+/* Animação de FadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

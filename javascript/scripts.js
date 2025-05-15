@@ -29,10 +29,28 @@ window.addEventListener('load', function () {
     document.body.classList.add('fade-in');
 });
 
-  function toggleMenu() {
+function toggleMenu() {
     const navbar = document.getElementById("navbar");
     navbar.classList.toggle("active");
   }
+
+  // Para dropdown funcionar no mobile
+  document.querySelectorAll(".dropdown > a").forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      const parent = item.parentElement;
+
+      // Fechar outros dropdowns abertos
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        if (drop !== parent) {
+          drop.classList.remove("active");
+        }
+      });
+
+      // Abrir o dropdown clicado
+      parent.classList.toggle("active");
+    });
+  });
 
 document.addEventListener('DOMContentLoaded', () => {
   const track  = document.querySelector('.carousel-track');
