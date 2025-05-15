@@ -193,4 +193,70 @@ nav a:hover::after {
   width: 30%;
   border-radius: 8px;
   object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.cta {
+  background-color: #1f94f4;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 60px auto;
+  border-radius: 20px;
+  max-width: 900px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta a.botao {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: white;
+  color: #1f94f4;
+  padding: 12px 30px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.cta a.botao:hover {
+  background-color: #f0f0f0;
+}
+
+/* COOKIES */
+.cookie-notice {
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 10px 10px 0 0;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  transform: translateX(-50%);
+}
+
+.cookie-notice button {
+  background-color: #1f94f4;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* RODAPÉ */
+footer.rodape {
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
