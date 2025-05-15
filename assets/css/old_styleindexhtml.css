@@ -303,92 +303,86 @@ footer.rodape {
   margin-top: 80px;
 }
 
-/* ======== RESPONSIVO ======== */
-@media (max-width: 768px) {
-  body {
-    padding-top: 90px;
-  }
-  .header-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero {
-    flex-direction: column;
-    height: auto;
-  }
-  .hero-carousel {
-    height: 300px;
-  }
-  .hero-description {
-    padding: 20px;
-  }
-
-  /* Menu Hamburger */
-  .hamburger {
-    display: block;
-    font-size: 2rem;
+/* ======== MENU HAMBURGUER ======== */
+.hamburger {
+    display: none;
     cursor: pointer;
+    font-size: 1.8rem;
     color: #fff;
-    z-index: 1001;
-  }
-  #navbar {
-    display: block;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    background-color: #000;
-    border-radius: 0 0 8px 8px;
-    overflow: hidden;
-    z-index: 1000;
-
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-  }
-  #navbar.active {
-    max-height: 500px; /* Ajuste conforme o conteúdo */
-    opacity: 1;
-  }
-  #navbar ul {
-    flex-direction: column;
-    gap: 0;
-  }
-  #navbar ul li {
-    border-bottom: 1px solid #222;
-  }
-  #navbar ul li a {
-    padding: 12px 20px;
-    display: block;
-  }
-
-  /* No mobile, dropdown fica sempre aberto e ajustado */
-  .dropdown-content {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    box-shadow: none !important;
-    background: #222 !important;
-  }
+    order: 1;
 }
 
-/* Para telas menores que 400px ajustar ainda mais */
-@media (max-width: 400px) {
-  .hero-description h1 {
-    font-size: 1.6rem;
-  }
-  .hero-carousel {
-    height: 220px;
-  }
-  .slide-img {
-    width: 100%;
-    height: 60%;
-  }
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        padding: 10px;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #000;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    nav.active {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 0;
+    }
+
+    nav ul.menu li {
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    nav ul.menu li a {
+        width: 100%;
+        padding: 15px 20px;
+        transform: none !important;
+    }
+
+    .dropdown-content {
+        position: static;
+        background: #222;
+        box-shadow: none;
+        display: none;
+        transition: none;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+
+    .contact {
+        display: none;
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .hamburger {
+        order: 2;
+    }
 }
