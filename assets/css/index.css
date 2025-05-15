@@ -209,3 +209,62 @@ footer.rodape {
   .contact{font-size:.85rem}
 }
 
+/* === MENU HAMBURGUER PARA MOBILE === */
+
+/* Estilo do bot?o hamburguer */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Menu inicialmente escondido em mobile */
+#navbar {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Exibe o bot?o em mobile */
+  }
+
+  #navbar {
+    display: block;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    max-height: 0; /* Altura inicial zero */
+    overflow: hidden;
+    transition: max-height 0.4s ease; /* Transi??o suave */
+  }
+
+  #navbar ul {
+    flex-direction: column;
+  }
+
+  #navbar ul li {
+    width: 100%;
+  }
+
+  #navbar ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    border-bottom: 1px solid #333;
+    text-align: left;
+  }
+
+  #navbar ul li a:hover {
+    background-color: #1f94f4;
+  }
+
+  #navbar.active {
+    max-height: 500px; /* Define um limite para expandir */
+  }
+}

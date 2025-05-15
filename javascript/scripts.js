@@ -29,10 +29,10 @@ window.addEventListener('load', function () {
     document.body.classList.add('fade-in');
 });
 
-function toggleMenu() {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("active");
-}
+  function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+  }
 
 document.addEventListener('DOMContentLoaded', () => {
   const track  = document.querySelector('.carousel-track');
