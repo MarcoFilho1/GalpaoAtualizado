@@ -146,7 +146,9 @@ nav a:hover {
   align-items: center;
   margin-top: 20px;
   height: 80vh;
+  flex-wrap: wrap;
 }
+
 /* container do carrossel */
 .hero-carousel {
   position: relative;
@@ -155,13 +157,16 @@ nav a:hover {
   height: 100%;
   opacity: 0;
   animation: fadeIn 1s ease-out .2s forwards;
+  max-width: 100%;
 }
+
 /* trilha de slides */
 .carousel-track {
   display: flex;
   transition: transform .5s ease-in-out;
   height: 100%;
 }
+
 /* cada slide */
 .carousel-slide {
   position: relative;
@@ -169,6 +174,7 @@ nav a:hover {
   height: 100%;
   background: inherit;
 }
+
 /* fundo borrado via pseudo-elemento */
 .carousel-slide::before {
   content: '';
@@ -182,6 +188,7 @@ nav a:hover {
   transform: scale(1.05);
   z-index: 0;
 }
+
 /* imagem nítida */
 .slide-img {
   position: relative;
@@ -234,6 +241,7 @@ nav a:hover {
   border-radius: 10px;
   opacity: 0;
   animation: fadeIn 1s ease-out .8s forwards;
+  max-width: 100%;
 }
 .hero-description h1 {
   font-size: 2.2rem;
@@ -383,16 +391,58 @@ footer.rodape {
   /* Adicione aqui outros estilos específicos para mobile */
 }
 
-/* ======== RESPONSIVO ======== */
-@media(max-width:768px){
-  body{padding-top:90px}
-  .header-container{flex-direction:column;gap:10px}
-  nav ul{flex-wrap:wrap;justify-content:center}
-  .hero{flex-direction:column;height:auto}
-  .hero-carousel{height:300px}
-  .hero-description{padding:20px}
+/* ========== RESPONSIVO ========== */
+@media(max-width: 768px) {
+  body {
+    padding-top: 90px;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .hero-carousel {
+    height: 250px;
+    max-width: 100%;
+  }
+  
+  .slide-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-description {
+    margin-top: 10px;
+    padding: 15px;
+  }
 }
-@media(max-width:480px){
-  nav a{font-size:.85rem;padding:5px8px}
-  .contact{font-size:.85rem}
+
+@media(max-width: 480px) {
+  nav a {
+    font-size: .85rem;
+    padding: 5px 8px;
+  }
+
+  .contact {
+    font-size: .85rem;
+  }
+  
+  .hero-description h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description p {
+    font-size: 0.9rem;
+  }
 }
