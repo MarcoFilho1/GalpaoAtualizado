@@ -86,6 +86,11 @@ section#contato button[type="submit"] {
   padding: 0;
 }
 
+#contato {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 /* Garante que o rodapé não tenha margem superior */
 .rodape {
   margin-top: 0 !important;
