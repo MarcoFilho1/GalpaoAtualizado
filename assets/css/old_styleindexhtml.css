@@ -372,12 +372,12 @@ footer.rodape {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.8em;
+    font-size: 1em;
     transition: transform 0.2s ease;
     text-decoration: none !important;
   }
   .dropdown.active > a::after {
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(-90deg);
     text-decoration: none !important;
   }
 
