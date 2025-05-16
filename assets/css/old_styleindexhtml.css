@@ -266,24 +266,21 @@ footer.rodape {
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   body {
     padding-top: 60px;
   }
   
   /* ======== MENU HAMBURGUER ======== */
- 
   .hamburger {
     display: block;
     position: relative;
     z-index: 1001;
     order: 2;
-    padding: 10px 15px;
+    padding: 5px; /* Reduz padding para ocupar menos espaço */
     font-size: 1.3rem;
     margin-top: 0; /* Remove margem extra */
-    padding: 5px; /* Reduz padding para ocupar menos espaço */
   }
-
 
   nav {
     position: absolute;
@@ -318,6 +315,7 @@ footer.rodape {
   nav.active ~ .hamburger {
     display: none;
   }
+
   nav ul.menu {
     padding-top: 70px; /* Altura do header */
     flex-direction: column;
@@ -329,18 +327,45 @@ footer.rodape {
     border-bottom: 1px solid #333;
   }
 
-  nav ul.menu li a {
+  /* 1) Desativa TUDO de hover/underline nas âncoras */
+  nav ul.menu li a,
+  nav ul.menu li a:visited,
+  nav ul.menu li a:hover,
+  nav ul.menu li a:focus {
     display: block;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none !important;
   }
-  
+
+  /* elimina a barra de hover que vinha do ::after */
+  nav ul.menu li a::after,
+  nav ul.menu li a:hover::after {
+    width: 0 !important;
+    background: none !important;
+  }
+
+  /* 2) Submenu sempre oculto, só abre com .active */
+  .dropdown-content {
+    position: static;
+    background: #222;
+    display: none !important;
+    box-shadow: none;
+  }
+  .dropdown.active .dropdown-content {
+    display: block !important;
+  }
+
+  .dropdown-content a {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
+
+  /* 3) Setinha fixa, sem sublinhado */
   .dropdown > a {
     position: relative;
     padding-right: 30px; /* espaço p/ a seta */
   }
-
   .dropdown > a::after {
     content: '▾';
     position: absolute;
@@ -349,28 +374,11 @@ footer.rodape {
     transform: translateY(-50%);
     font-size: 0.8em;
     transition: transform 0.2s ease;
-    text-decoration: none;
+    text-decoration: none !important;
   }
-
   .dropdown.active > a::after {
     transform: translateY(-50%) rotate(180deg);
-    text-decoration: none;
-  }
-  .dropdown-content {
-    position: static;
-    background: #222;
-    display: none;
-    box-shadow: none;
-  }
-
-  .dropdown.active .dropdown-content {
-    display: block;
-  }
-
-
-  .dropdown-content a {
-    padding: 12px 25px;
-    font-size: 0.9em;
+    text-decoration: none !important;
   }
 
   .contact {
@@ -386,7 +394,6 @@ footer.rodape {
   .logo {
     order: 0;
   }
-
 
   header {
     padding: 0; /* Reduzi o padding vertical */
@@ -433,8 +440,7 @@ footer.rodape {
     font-size: 1.2rem !important;
     padding: 5px 8px !important;
     background: rgba(0, 0, 0, 0.3) !important;
-    
-}
+  }
 
   .prev-btn {
     left: 2px;
@@ -454,8 +460,8 @@ footer.rodape {
     margin-top: 10px;
     padding: 15px;
   }
-  
 }
+
 
 @media(max-width: 480px) {
   nav a {
@@ -476,47 +482,3 @@ footer.rodape {
   }
 }
 
-
-@media (max-width: 768px) {
-
-  /* 1) Desativa TUDO de hover/underline nas âncoras */
-  nav ul.menu li a,
-  nav ul.menu li a:visited,
-  nav ul.menu li a:hover,
-  nav ul.menu li a:focus {
-    text-decoration: none !important;
-  }
-  /* elimina a barra de hover que vinha do ::after */
-  nav ul.menu li a::after,
-  nav ul.menu li a:hover::after {
-    width: 0 !important;
-    background: none !important;
-  }
-
-  /* 2) Submenu sempre oculto, só abre com .active */
-  .dropdown-content {
-    display: none !important;
-  }
-  .dropdown.active .dropdown-content {
-    display: block !important;
-  }
-
-  /* 3) Setinha fixa, sem sublinhado */
-  .dropdown > a {
-    position: relative;
-    padding-right: 30px;
-  }
-  .dropdown > a::after {
-    content: '▾';
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8em;
-    transition: transform 0.2s ease;
-    text-decoration: none !important;
-  }
-  .dropdown.active > a::after {
-    transform: translateY(-50%) rotate(180deg);
-  }
-}
