@@ -54,6 +54,7 @@ nav a:hover::after { width:100% }
   transform:translateX(-10px); transition:all .3s ease;
   z-index:999;
 }
+
 .dropdown:hover .dropdown-content {
   opacity:1; visibility:visible; transform:translateX(0);
 }
@@ -332,8 +333,29 @@ footer.rodape {
     display: block;
     padding: 15px 25px;
     text-align: center;
+    text-decoration: none !important;
+  }
+  
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px; /* espaço p/ a seta */
   }
 
+  .dropdown > a::after {
+    content: '▾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+  }
+
+  .dropdown.active > a::after {
+    transform: translateY(-50%) rotate(180deg);
+    text-decoration: none;
+  }
   .dropdown-content {
     position: static;
     background: #222;
@@ -344,6 +366,7 @@ footer.rodape {
   .dropdown.active .dropdown-content {
     display: block;
   }
+
 
   .dropdown-content a {
     padding: 12px 25px;
@@ -453,3 +476,47 @@ footer.rodape {
   }
 }
 
+
+@media (max-width: 768px) {
+
+  /* 1) Desativa TUDO de hover/underline nas âncoras */
+  nav ul.menu li a,
+  nav ul.menu li a:visited,
+  nav ul.menu li a:hover,
+  nav ul.menu li a:focus {
+    text-decoration: none !important;
+  }
+  /* elimina a barra de hover que vinha do ::after */
+  nav ul.menu li a::after,
+  nav ul.menu li a:hover::after {
+    width: 0 !important;
+    background: none !important;
+  }
+
+  /* 2) Submenu sempre oculto, só abre com .active */
+  .dropdown-content {
+    display: none !important;
+  }
+  .dropdown.active .dropdown-content {
+    display: block !important;
+  }
+
+  /* 3) Setinha fixa, sem sublinhado */
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px;
+  }
+  .dropdown > a::after {
+    content: '▾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+    text-decoration: none !important;
+  }
+  .dropdown.active > a::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

@@ -85,13 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Fechar menu ao clicar em links
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    nav.classList.remove('active');
-                    hamburger.classList.remove('fa-times');
-                    overlay.style.display = 'none';
-                }
-            });
+        link.addEventListener('click', (e) => {
+            // se for mobile e NÃO estiver dentro de um .dropdown
+            if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
+            nav.classList.remove('active');
+            hamburger.classList.remove('fa-times');
+            overlay.style.display = 'none';
+            }
+        });
         });
 
         // Fecha o menu ao clicar no overlay
