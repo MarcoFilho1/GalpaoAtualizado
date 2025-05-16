@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petros Coberturas – Galpões e Tendões sob medida</title>
-    <link rel="stylesheet" href="assets/css/new_index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petros Coberturas & Galpões e Tendas sob medida</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <!-- Cabeçalho -->
-    <header>
+<header>
   <div class="header-container">
     <div class="logo">
       <img src="assets/images/logogalpao-removebg-preview.png" alt="Logo Petros Galpões">
     </div>
-    <nav>
+
+  <nav>
+<!-- Cabeçalho -->
       <ul class="menu">
-        <li><a href="new_index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="institucional.html">Institucional</a></li>
         <li class="dropdown">
-          <a class="dropbtn">Galpões</a>
+          <a href="#">Galpões</a>
           <div class="dropdown-content">
             <a href="galpao_lonado.html">Lonado</a>
             <a href="galpao_metalico.html">Metálico</a>
           </div>
         </li>
         <li class="dropdown">
-          <a class="dropbtn">Eventos</a>
+          <a href="#">Eventos</a>
           <div class="dropdown-content">
             <a href="tenda_piramidal.html">Piramidal</a>
             <a href="tenda_sanfonada.html">Sanfonada</a>
@@ -38,6 +41,7 @@
         <li><a href="FAQ.html">FAQ</a></li>
       </ul>
     </nav>
+
     <div class="contact">
       <i class="fa fa-phone"></i>
       <span>(81) 99180-5129</span>
@@ -45,45 +49,52 @@
   </div>
 </header>
 
-
 <body>
-    
+  <!-- Conteúdo Principal -->
+  <main>
+    <section class="hero">
+      <div class="hero-carousel">
+        <button class="carousel-btn prev-btn" aria-label="Imagem anterior">←</button>
 
-    <!-- Conteúdo -->
-    <main>
-        <section class="hero">
-            <div class="hero-image">
-                <img src="assets/images/galpaomenu.jpeg" class="overlay-image" alt="Galpão">
-            </div>
-            <div class="hero-description">
-                <h1>Construa seu Galpão com a Petros</h1>
-                <p>
-                    Oferecemos soluções práticas e rápidas para a montagem de galpões de alta qualidade. Com experiência no mercado, garantimos estruturas resistentes e duráveis para atender às suas necessidades.
-                </p>
-                <p>
-                    Entre em contato para saber mais sobre nossos serviços!
-                </p>
-                <a href="#contato" class="button">Fale Conosco</a>
-            </div>
-        </section>
-
-
-
-        <!-- Cookie Notice -->
-        <div class="cookie-notice">
-            <p>Utilizamos cookies para oferecer melhor experiência, melhorar o desempenho, analisar como você interage em nosso site e personalizar conteúdo. Ao utilizar este site, você concorda com o uso de cookies.</p>
-            <button>Ok, entendi!</button>
+        <div class="carousel-track">
+          <!-- Slide 1 -->
+          <div class="carousel-slide" data-bg="assets/images/galpao-com-lona.jpg">
+            <img src="assets/images/galpao-com-lona.jpg" class="slide-img" alt="Galpão 1">
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide" data-bg="assets/images/galpao-com-maquina.jpg">
+            <img src="assets/images/galpao-com-maquina.jpg" class="slide-img" alt="Galpão 2">
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-slide" data-bg="assets/images/galpao-lona-grande.jpg">
+            <img src="assets/images/galpao-lona-grande.jpg" class="slide-img" alt="Galpão 3">
+          </div>
         </div>
-    </main>
 
-    <!-- Scripts -->
-    <script src="javascript/scripts.js"></script>
+        <button class="carousel-btn next-btn" aria-label="Próxima imagem">→</button>
+      </div>
+
+      <div class="hero-description">
+        <h1>Construa seu Galpão com a Petros</h1>
+        <p>Oferecemos soluções práticas e rápidas para a montagem de galpões de alta qualidade. Com experiência no mercado, garantimos estruturas resistentes e duráveis para atender às suas necessidades.</p>
+        <p>Entre em contato para saber mais sobre nossos serviços!</p>
+        <a href="#contato" class="button">Fale Conosco</a>
+      </div>
+    </section>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-notice">
+      <p>Utilizamos cookies para oferecer melhor experiência, melhorar o desempenho, analisar como você interage em nosso site e personalizar conteúdo. Ao utilizar este site, você concorda com o uso de cookies.</p>
+      <button>Ok, entendi!</button>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>Marca Petros Galpões. Todos os direitos reservados &copy; 2025</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="javascript/scripts.js"></script>
 </body>
-
-<footer class="rodape">
-    <p>
-        Marca Petros Galpões. Todos os direitos reservados &copy; 2025
-
-    </p>
-</footer>
 </html>
