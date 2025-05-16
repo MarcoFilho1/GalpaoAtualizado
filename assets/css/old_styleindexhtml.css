@@ -350,7 +350,7 @@ footer.rodape {
   
   header {
     padding: 3px 0; /* Reduzi o padding vertical */
-    height: 50px; /* Defini uma altura fixa */
+    height: 80px; /* Defini uma altura fixa */
   }
 
   .header-container {
