@@ -82,11 +82,22 @@
       </div>
     </section>
 
-    <section class="cta">
-      <h2>Solicite um orçamento sem compromisso</h2>
-      <p>Entre em contato conosco e saiba como o Galpão Metálico pode atender seu projeto da melhor forma!</p>
-      <a href="index.html?scrollTo=contato" class="botao">Fale Conosco</a>
-    </section>
+          <!-- Local onde o formulário será injetado -->
+      <div id="orcamento"></div>
+
+      <!-- Script para carregar dinamicamente -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          fetch('assets/includes/tendaSa_orca.html')
+            .then(response => response.text())
+            .then(html => {
+              document.getElementById('orcamento').innerHTML = html;
+            })
+            .catch(err => {
+              console.error('Erro ao carregar o formulário:', err);
+            });
+        });
+      </script>
 
     <div class="cookie-notice">
       <p>Utilizamos cookies para oferecer melhor experiência, melhorar o desempenho, analisar como você interage em nosso site e personalizar conteúdo. Ao utilizar este site, você concorda com o uso de cookies.</p>
@@ -103,3 +114,4 @@
  <script src="javascript/scripts.js"></script>
 
 </body>
+</section>
