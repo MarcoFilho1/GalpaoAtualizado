@@ -278,3 +278,34 @@ footer.rodape {
     font-size: 14px;
   }
 }
+
+
+.cta {
+  background-color: #1f94f4;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+  border-radius: -5px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta a.botao {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: white;
+  color: #1f94f4;
+  padding: 12px 30px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.cta a.botao:hover {
+  background-color: #f0f0f0;
+}
