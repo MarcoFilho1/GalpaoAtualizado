@@ -24,18 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
             slide.style.setProperty('--bg', `url(/GalpaoAtualizado/${bgUrl})`);
         });
 
-        // Fun??o de movimento do carrossel
+        // Função de movimento do carrossel
         const moveTo = (i) => {
             track.style.transform = `translateX(-${i * 100}%)`;
             index = i;
         };
 
-        // Bot?o anterior
+        // Botão anterior
         document.querySelector('.prev-btn')?.addEventListener('click', () => {
             moveTo((index - 1 + slides.length) % slides.length);
         });
 
-        // Pr?ximo bot?o
+        // Botão próximo
         document.querySelector('.next-btn')?.addEventListener('click', () => {
             moveTo((index + 1) % slides.length);
         });
@@ -43,63 +43,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========= MENU HAMBURGUER =========
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    const overlay = document.querySelector('.nav-overlay');
-    
+    const nav       = document.querySelector('nav');
+    const overlay   = document.querySelector('.nav-overlay');
+
+    // Helper para fechar menu + submenus
+    function closeMenu() {
+        nav.classList.remove('active');
+        hamburger.classList.remove('fa-times');
+        overlay.style.display = 'none';
+        document.querySelectorAll('.dropdown.active')
+            .forEach(dd => dd.classList.remove('active'));
+    }
+
     if (hamburger && nav) {
-        // Abrir/fechar menu
-        hamburger.addEventListener('click', function(e) {
+        // Abre / fecha menu
+        hamburger.addEventListener('click', e => {
             e.stopPropagation();
-            nav.classList.toggle('active');
-            overlay.style.display = nav.classList.contains('active') ? 'block' : 'none';
-            this.classList.toggle('fa-times');
+            if (nav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                nav.classList.add('active');
+                hamburger.classList.add('fa-times');
+                overlay.style.display = 'block';
+            }
         });
 
         // Fechar ao clicar fora
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', e => {
             if (!e.target.closest('nav') && !e.target.closest('.hamburger')) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('fa-times');
-                overlay.style.display = 'none';
+                closeMenu();
             }
         });
 
         // Fechar ao rolar
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             if (nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('fa-times');
-                overlay.style.display = 'none';
+                closeMenu();
             }
         });
 
-        // Dropdown mobile
+        // Dropdown mobile (toggle exclusivo)
         document.querySelectorAll('.dropdown > a').forEach(link => {
             link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    this.parentElement.classList.toggle('active');
+                    const thisDropdown = this.parentElement;
+                    // fecha todos os outros
+                    document.querySelectorAll('.dropdown.active')
+                        .forEach(dd => {
+                            if (dd !== thisDropdown) dd.classList.remove('active');
+                        });
+                    // abre/fecha o clicado
+                    thisDropdown.classList.toggle('active');
                 }
             });
         });
 
-        // Fechar menu ao clicar em links
+        // Fechar menu ao clicar em links (exceto dropdown-toggle)
         document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            // se for mobile e NÃO estiver dentro de um .dropdown
-            if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
-            nav.classList.remove('active');
-            hamburger.classList.remove('fa-times');
-            overlay.style.display = 'none';
-            }
-        });
+            link.addEventListener('click', e => {
+                if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
+                    closeMenu();
+                }
+            });
         });
 
-        // Fecha o menu ao clicar no overlay
+        // Fechar ao clicar no overlay
         overlay.addEventListener('click', () => {
-            nav.classList.remove('active');
-            hamburger.classList.remove('fa-times');
-            overlay.style.display = 'none';
+            closeMenu();
         });
     }
 });
