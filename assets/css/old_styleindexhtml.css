@@ -263,6 +263,7 @@ footer.rodape {
     order: 2;
     z-index: 1001;
     padding: 10px 15px;
+    font-size: 1.5rem;
   }
 
   nav {
@@ -345,9 +346,17 @@ footer.rodape {
     padding-top: 90px;
   }
   
+  header {
+    padding: 5px 0; /* Reduzi o padding vertical */
+    height: 120px; /* Defini uma altura fixa */
+  }
+
   .header-container {
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 80px; /* Reduzi um pouco o tamanho da logo */
   }
   
   nav ul {
