@@ -263,7 +263,9 @@ footer.rodape {
     order: 2;
     z-index: 1001;
     padding: 10px 15px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-top: 0; /* Remove margem extra */
+    padding: 5px; /* Reduz padding para ocupar menos espaço */
   }
 
   nav {
@@ -347,8 +349,8 @@ footer.rodape {
   }
   
   header {
-    padding: 5px 0; /* Reduzi o padding vertical */
-    height: 60px; /* Defini uma altura fixa */
+    padding: 3px 0; /* Reduzi o padding vertical */
+    height: 50px; /* Defini uma altura fixa */
   }
 
   .header-container {
@@ -356,7 +358,7 @@ footer.rodape {
   }
 
   .logo img {
-    width: 80px; /* Reduzi um pouco o tamanho da logo */
+    width: 60px; /* Reduzi um pouco o tamanho da logo */
   }
   
   nav ul {
