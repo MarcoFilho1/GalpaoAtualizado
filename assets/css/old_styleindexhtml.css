@@ -349,8 +349,8 @@ footer.rodape {
   }
   
   header {
-    padding: 3px 0; /* Reduzi o padding vertical */
-    height: 80px; /* Defini uma altura fixa */
+    padding: 5px 0; /* Reduzi o padding vertical */
+    height: 70px; /* Defini uma altura fixa */
   }
 
   .header-container {
