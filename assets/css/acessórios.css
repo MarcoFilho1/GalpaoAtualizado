@@ -79,3 +79,59 @@ nav a:hover::after { width:100% }
 .contact span {
   color: white;
 }
+
+.intro-acessorios {
+  margin-top: 50px;
+  padding: 20px;
+  color: #1f94f4;
+  text-align: center;
+  margin-bottom: -20px;
+  font-size: 1.2em;
+  opacity:0; animation:fadeIn 1s ease-out .8s forwards;
+}
+
+.intro-acessorios p {
+  color: #555;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.8s forwards;
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 0 10px;    
+  text-align: center;  
+}
+
+.imagens-acessorios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+
+.imagens-acessorios a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.imagens-acessorios img {
+  width: 350px;
+  height: 200px;
+  max-width: 350px;
+  border-radius: 8px;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.2s forwards;
+  justify-self: center;
+}
+
+.imagem-item {
+  text-align: center;
+}
+
+.imagem-item p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 1000;
+}
