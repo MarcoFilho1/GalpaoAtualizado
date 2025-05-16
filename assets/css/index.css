@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
 
-/* ======== Animação FadeIn ======== */
+/* ======== Animaï¿½ï¿½o FadeIn ======== */
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 
 /* ======== RESET & BASE ======== */
@@ -13,7 +13,7 @@ body {
   padding-top:110px;
 }
 
-/* ======== CABEÇALHO ======== */
+/* ======== CABEï¿½ALHO ======== */
 header {
   position:fixed; top:0; width:100%; z-index:1000;
   background:#000; color:#fff; padding:12px 0;
@@ -119,7 +119,7 @@ nav a:hover::after { width:100% }
   z-index: 0;
 }
 
-/* imagem nítida */
+/* imagem nï¿½tida */
 .slide-img {
   position: relative;
   z-index: 1;
@@ -132,12 +132,12 @@ nav a:hover::after { width:100% }
   box-shadow: 0 4px 10px rgba(0,0,0,.3);
   opacity: 0;
   animation: fadeIn 1s ease-out .4s forwards;
-  object-fit: cover; /* Garante que a imagem preencha o espaço */
-  height: 80%; /* Altura ajustável conforme necessidade */
+  object-fit: cover; /* Garante que a imagem preencha o espaï¿½o */
+  height: 80%; /* Altura ajustï¿½vel conforme necessidade */
   
 }
 
-/* botões do carrossel */
+/* botï¿½es do carrossel */
 .carousel-btn {
   position:absolute; top:50%; transform:translateY(-50%);
   background:rgba(0,0,0,.5); border:none; color:#fff;
@@ -150,7 +150,7 @@ nav a:hover::after { width:100% }
 .prev-btn { left:10px }
 .next-btn { right:10px }
 
-/* descrição do hero */
+/* descriï¿½ï¿½o do hero */
 .hero-description {
   flex:1; padding:30px;
   background:rgba(245,245,245,.95); border-radius:10px;
@@ -159,7 +159,7 @@ nav a:hover::after { width:100% }
 .hero-description h1 { font-size:2.2rem; margin-bottom:20px; color:#1a1a1a }
 .hero-description p { font-size:1rem; margin-bottom:25px; color:#444 }
 
-/* ======== BOTÕES ======== */
+/* ======== BOTï¿½ES ======== */
 .button {
   display:inline-block; padding:10px 25px;
   background:#1f94f4; color:#fff; border-radius:6px;
@@ -189,100 +189,233 @@ nav a:hover::after { width:100% }
 }
 .cookie-notice button:hover { background:#1676c2 }
 
-/* ======== RODAPÉ ======== */
+/* ======== RODAPï¿½ ======== */
 footer.rodape {
   background:#000; color:#fff; text-align:center;
   padding:40px 20px; margin-top:80px;
 }
 
-/* ======== RESPONSIVO ======== */
-@media(max-width:768px){
-  body{padding-top:90px}
-  .header-container{flex-direction:column;gap:10px}
-  nav ul{flex-wrap:wrap;justify-content:center}
-  .hero{flex-direction:column;height:auto}
-  .hero-carousel{height:300px}
-  .hero-description{padding:20px}
-}
-@media(max-width:480px){
-  nav a{font-size:.85rem;padding:5px8px}
-  .contact{font-size:.85rem}
+/* ========== RESPONSIVO ========== */
+/* ========== ESCONDENDO O MENU HAMBURGUER DESKTOP =======*/
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
 }
 
-/* === MENU HAMBURGUER PARA MOBILE === */
-
-/* Estilo do bot?o hamburguer */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-  z-index: 1001;
-}
-
-/* Navega??o para desktop */
-#navbar {
-  display: flex;
-}
-
-#navbar ul {
-  display: flex;
-  gap: 15px;
-}
-
-#navbar ul li {
-  list-style: none;
-}
-
-#navbar ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-#navbar ul li a:hover {
-  background: #1f94f4;
-}
-
-/* Estilo para Mobile */
 @media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  
+  /* ======== MENU HAMBURGUER ======== */
   .hamburger {
     display: block;
+    position: relative;
+    z-index: 1001;
+    order: 2;
+    padding: 5px; /* Reduz padding para ocupar menos espa?o */
+    font-size: 1.3rem;
+    margin-top: 0; /* Remove margem extra */
   }
 
-  /* Esconde o menu principal no mobile */
-  #navbar {
-    display: none;
+  nav {
     position: absolute;
-    top: 60px;
+    top: 100%;
+    right: -50%;
+    width: 50%;
+    background: #000;
+    transition: all 0.3s ease-out;
+    z-index: 999;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  }
+
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    display: none;
+  }
+
+  nav.active + .nav-overlay {
+    display: block;
+  }
+
+  nav.active {
     right: 0;
-    width: 200px;
-    background-color: #000;
-    border-radius: 0 0 8px 8px;
-    overflow: hidden;
-    z-index: 1000;
   }
 
-  #navbar ul {
+  nav.active ~ .hamburger {
+    display: none;
+  }
+
+  nav ul.menu {
+    padding-top: 70px; /* Altura do header */
     flex-direction: column;
+    padding: 0;
   }
 
-  #navbar ul li a {
-    display: block;
-    padding: 12px 20px;
-    color: white;
+  nav ul.menu li {
+    width: 100%;
     border-bottom: 1px solid #333;
-    text-align: left;
   }
 
-  #navbar ul li a:hover {
-    background-color: #1f94f4;
-  }
-
-  /* Quando ativo, o menu expande */
-  #navbar.active {
+  /* 1) Desativa TUDO de hover/underline nas ?ncoras */
+  nav ul.menu li a,
+  nav ul.menu li a:visited,
+  nav ul.menu li a:hover,
+  nav ul.menu li a:focus {
     display: block;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none !important;
+  }
+
+  /* elimina a barra de hover que vinha do ::after */
+  nav ul.menu li a::after,
+  nav ul.menu li a:hover::after {
+    width: 0 !important;
+    background: none !important;
+  }
+
+  /* 2) Submenu sempre oculto, s? abre com .active */
+  .dropdown-content {
+    position: static;
+    background: #222;
+    display: none !important;
+    box-shadow: none;
+  }
+  .dropdown.active .dropdown-content {
+    display: block !important;
+  }
+
+  .dropdown-content a {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
+
+  /* 3) Setinha fixa, sem sublinhado */
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px; /* espa?o p/ a seta */
+  }
+  .dropdown > a::after {
+    content: 'â–¾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    transition: transform 0.2s ease;
+    text-decoration: none !important;
+  }
+  .dropdown.active > a::after {
+    transform: translateY(-50%) rotate(-90deg);
+    text-decoration: none !important;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  /* ======== AJUSTES GERAIS ======== */
+  .header-container {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  header {
+    padding: 0; /* Reduzi o padding vertical */
+    height: 70px; /* Defini uma altura fixa */
+  }
+
+  .header-container {
+    padding: 5px 10px !important; /* Reduzir espa?amento interno */
+    min-height: 60px; /* Garantir altura m?nima */
+  }
+
+  .logo img {
+    width: 60px; /* Reduzi um pouco o tamanho da logo */
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .hero-carousel {
+    height: 250px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -10px; /* Compensar espa?o residual */
+  }
+  
+  .carousel-track {
+    height: 100%
+  }
+
+  .carousel-slide {
+    height: 250px;
+    position: relative;
+  }
+
+  .carousel-btn {
+    font-size: 1.2rem !important;
+    padding: 5px 8px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .prev-btn {
+    left: 2px;
+  }
+
+  .next-btn {
+    right: 2px;
+  }
+
+  .slide-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Garante o enquadramento correto */
+  }
+
+  .hero-description {
+    margin-top: 10px;
+    padding: 15px;
   }
 }
+
+
+@media(max-width: 480px) {
+  nav a {
+    font-size: .85rem;
+    padding: 5px 8px;
+  }
+
+  .contact {
+    font-size: .85rem;
+  }
+  
+  .hero-description h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description p {
+    font-size: 0.9rem;
+  }
+}
+

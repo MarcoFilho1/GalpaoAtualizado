@@ -5,55 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Petros Coberturas & Galpões e Tendas sob medida</title>
   <link rel="stylesheet" href="assets/css/index.css">
-  <link rel="stylesheet" href="assets/css/contato.css">
+  <link rel="stylesheet" href="assets/includes/css/contato.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Remove espaço extra abaixo do formulário de contato */
-    #contato {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  </style>
 </head>
-<body>
-  <!-- Cabeçalho -->
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="assets/images/logogalpao-removebg-preview.png" alt="Logo Petros Galpões">
-      </div>
-      <nav>
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="institucional.html">Institucional</a></li>
-          <li class="dropdown">
-            <a href="#">Galpões</a>
-            <div class="dropdown-content">
-              <a href="galpao_lonado.html">Lonado</a>
-              <a href="galpao_metalico.html">Metálico</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#">Eventos</a>
-            <div class="dropdown-content">
-              <a href="tenda_piramidal.html">Piramidal</a>
-              <a href="tenda_sanfonada.html">Sanfonada</a>
-            </div>
-          </li>
-          <li><a href="segmentos.html">Segmentos</a></li>
-          <li><a href="acessorios.html">Acessórios</a></li>
-          <li><a href="quem_somos.html">Quem Somos</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="FAQ.html">FAQ</a></li>
-        </ul>
+
+<!-- Cabeçalho -->
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="assets/images/logogalpao-removebg-preview.png" alt="Logo Petros Galpões">
+    </div>
+
+    <div class="nav-overlay"></div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="institucional.html">Institucional</a></li>
+        <li class="dropdown">
+          <a href="#">Galpões</a>
+          <div class="dropdown-content">
+            <a href="galpao_lonado.html">Lonado</a>
+            <a href="galpao_metalico.html">Metálico</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Eventos</a>
+          <div class="dropdown-content">
+            <a href="tenda_piramidal.html">Piramidal</a>
+            <a href="tenda_sanfonada.html">Sanfonada</a>
+          </div>
+        </li>
+        <li><a href="segmentos.html">Segmentos</a></li>
+        <li><a href="acessorios.html">Acessórios</a></li>
+        <li><a href="quem_somos.html">Quem Somos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+      </ul>
       </nav>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
       <div class="contact">
         <i class="fa fa-phone"></i>
         <span>(81) 99180-5129</span>
       </div>
     </div>
   </header>
-
+  
+<body>
   <!-- Conteúdo Principal -->
   <main>
     <section class="hero">
@@ -74,14 +75,15 @@
       </div>
       <div class="hero-description">
         <h1>Construa seu Galpão com a Petros</h1>
-        <p>Oferecemos soluções práticas e rápidas para a montagem de galpões de alta qualidade.</p>
+        <p>Oferecemos soluções práticas e rápidas para a montagem de galpões de alta qualidade. Com experiência no mercado, garantimos estruturas resistentes e duráveis para atender às suas necessidades.</p>
+        <p>Entre em contato para saber mais sobre nossos serviços!</p>
         <a href="#contato" class="button">Fale Conosco</a>
       </div>
     </section>
 
     <!-- Cookie Notice -->
     <div class="cookie-notice">
-      <p>Utilizamos cookies para oferecer melhor experiência e personalizar conteúdo.</p>
+      <p>Utilizamos cookies para oferecer melhor experiência, melhorar o desempenho, analisar como você interage em nosso site e personalizar conteúdo. Ao utilizar este site, você concorda com o uso de cookies.</p>
       <button>Ok, entendi!</button>
     </div>
 
@@ -93,52 +95,6 @@
   <footer class="rodape">
     <p>Marca Petros Galpões. Todos os direitos reservados &copy; 2025</p>
   </footer>
-
-  <!-- Carregamento Dinâmico do Contato -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('assets/includes/contato.html')
-        .then(response => {
-          if (!response.ok) throw new Error(response.statusText);
-          return response.text();
-        })
-        .then(html => document.getElementById('contato').innerHTML = html)
-        .catch(err => {
-          console.error(err);
-          document.getElementById('contato').textContent = 'Erro ao carregar formulário.';
-        });
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('assets/includes/contato.html')
-        .then(response => {
-          if (!response.ok) throw new Error(response.statusText);
-          return response.text();
-        })
-        .then(html => {
-          const contatoDiv = document.getElementById('contato');
-          contatoDiv.innerHTML = html;
-
-          // Verifica se a URL tem ?scrollTo=contato
-          const urlParams = new URLSearchParams(window.location.search);
-          const scrollTo = urlParams.get('scrollTo');
-
-          if (scrollTo === 'contato') {
-            setTimeout(() => {
-              const target = document.getElementById(scrollTo);
-              if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-              }
-            }, 100); // pequeno atraso para garantir que a seção foi renderizada
-          }
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById('contato').textContent = 'Erro ao carregar formulário.';
-        });
-    });
-  </script>
 
   <script src="javascript/scripts.js"></script>
 </body>
