@@ -382,3 +382,17 @@ footer.rodape {
 
   /* Adicione aqui outros estilos específicos para mobile */
 }
+
+/* ======== RESPONSIVO ======== */
+@media(max-width:768px){
+  body{padding-top:90px}
+  .header-container{flex-direction:column;gap:10px}
+  nav ul{flex-wrap:wrap;justify-content:center}
+  .hero{flex-direction:column;height:auto}
+  .hero-carousel{height:300px}
+  .hero-description{padding:20px}
+}
+@media(max-width:480px){
+  nav a{font-size:.85rem;padding:5px8px}
+  .contact{font-size:.85rem}
+}
