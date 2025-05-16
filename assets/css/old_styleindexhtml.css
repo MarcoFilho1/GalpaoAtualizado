@@ -84,7 +84,7 @@ nav a:hover {
   display: block;
 }
 
-/* Mobile */
+/* Mobile 
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -135,6 +135,10 @@ nav a:hover {
     display: none;
   }
 }
+
+*/
+
+
 /* ======== HERO / CARROSSEL ======== */
 .hero {
   display: flex;
@@ -305,92 +309,76 @@ footer.rodape {
 }
 
 /* ======== MENU HAMBURGUER ======== */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: #fff;
-    order: 1;
-}
-
 @media (max-width: 768px) {
-    .hamburger {
-        display: block;
-        padding: 10px;
-    }
+  /* ======== CABEÇALHO MOBILE ======== */
+  .hamburger {
+    display: block;
+    order: 2;
+    z-index: 1001;
+    padding: 10px 15px;
+  }
 
-    /* Esconde o menu desktop */
-    nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #000;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        z-index: 1001;
-    }
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
 
-    /* Mostra menu quando ativo */
-    nav.active {
-        display: block;
-        max-height: 1000px;
-        transition: max-height 0.5s ease-in;
-    }
+  nav.active {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+  }
 
-    nav ul.menu {
-        flex-direction: column;
-        gap: 0;
-        padding: 15px 0;
-    }
+  nav ul.menu {
+    flex-direction: column;
+    padding: 0;
+  }
 
-    nav ul.menu li {
-        text-align: center;
-        border-bottom: 1px solid #333;
-    }
+  nav ul.menu li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+  }
 
-    nav ul.menu li a {
-        width: 100%;
-        padding: 15px 20px;
-        transform: none !important;
-    }
+  nav ul.menu li a {
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+  }
 
-    .dropdown-content {
-        position: static;
-        background: #222;
-        box-shadow: none;
-        display: none;
-        transition: none;
-    }
+  .dropdown-content {
+    position: static;
+    background: #222;
+    display: none;
+    box-shadow: none;
+  }
 
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content {
-        display: block;
-    }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
 
-    .dropdown-content a {
-        padding: 10px 25px;
-        font-size: 0.9em;
-    }
+  .dropdown-content a {
+    padding: 12px 25px;
+    font-size: 0.9em;
+  }
 
-    .contact {
-        display: none;
-    }
+  .contact {
+    display: none;
+  }
 
-    /* Ajusta container do header */
-    .header-container {
-        position: relative;
-        padding: 10px 15px;
-        flex-wrap: nowrap;
-    }
+  /* ======== AJUSTES GERAIS ======== */
+  .header-container {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
 
-    .logo {
-        order: 0;
-    }
+  .logo {
+    order: 0;
+  }
 
-    .hamburger {
-        order: 2;
-    }
+  /* Adicione aqui outros estilos específicos para mobile */
 }
