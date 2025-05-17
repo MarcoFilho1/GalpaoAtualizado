@@ -378,7 +378,8 @@ footer.rodape {
   margin-top: 80px;
 }
 
-/* ======== RESPONSIVO ======== */
+/* ========== RESPONSIVO ========== */
+/* ========== ESCONDENDO O MENU HAMBURGUER DESKTOP =======*/
 @media (min-width: 769px) {
   .hamburger {
     display: none !important;
@@ -387,47 +388,21 @@ footer.rodape {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 100px;
+    padding-top: 60px;
   }
-
-  .top-bar {
-    height: 40px;
-  }
-
-  header {
-    top: 40px;
-  }
-
-  .social-icons {
-    gap: 8px;
-    left: 45%;
-  }
-
-  .contact-info {
-    gap: 5px;
-  }
-
-  .btn {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
-
-  .header-container {
-    flex-wrap: wrap;
-    padding: 10px 15px;
-  }
-
-  .logo {
-    order: 0;
-    margin-top: 5px;
-  }
-
-  .logo img {
-    width: 80px;
+  
+  /* ======== MENU HAMBURGUER ======== */
+  .hamburger {
+    display: block;
+    position: relative;
+    z-index: 1001;
+    order: 2;
+    padding: 5px; /* Reduz padding para ocupar menos espa?o */
+    font-size: 1.3rem;
+    margin-top: 0; /* Remove margem extra */
   }
 
   nav {
-    margin-top: 10px;
     position: absolute;
     top: 100%;
     right: -50%;
@@ -435,6 +410,7 @@ footer.rodape {
     background: #000;
     transition: all 0.3s ease-out;
     z-index: 999;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
   }
 
   .nav-overlay {
@@ -456,8 +432,12 @@ footer.rodape {
     right: 0;
   }
 
+  nav.active ~ .hamburger {
+    display: none;
+  }
+
   nav ul.menu {
-    padding-top: 70px;
+    padding-top: 70px; /* Altura do header */
     flex-direction: column;
     padding: 0;
   }
@@ -467,71 +447,158 @@ footer.rodape {
     border-bottom: 1px solid #333;
   }
 
-  nav ul.menu li a {
+  /* 1) Desativa TUDO de hover/underline nas ?ncoras */
+  nav ul.menu li a,
+  nav ul.menu li a:visited,
+  nav ul.menu li a:hover,
+  nav ul.menu li a:focus {
+    display: block;
     padding: 15px 25px;
     text-align: center;
+    text-decoration: none !important;
   }
 
+  /* elimina a barra de hover que vinha do ::after */
+  nav ul.menu li a::after,
+  nav ul.menu li a:hover::after {
+    width: 0 !important;
+    background: none !important;
+  }
+
+  /* 2) Submenu sempre oculto, s? abre com .active */
   .dropdown-content {
     position: static;
     background: #222;
     display: none !important;
+    box-shadow: none;
   }
-
   .dropdown.active .dropdown-content {
     display: block !important;
   }
 
   .dropdown-content a {
     padding: 12px 25px;
+    font-size: 0.9em;
+  }
+
+  /* 3) Setinha fixa, sem sublinhado */
+  .dropdown > a {
+    position: relative;
+    padding-right: 30px; /* espa?o p/ a seta */
+  }
+  .dropdown > a::after {
+    content: '▾';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    transition: transform 0.2s ease;
+    text-decoration: none !important;
+  }
+  .dropdown.active > a::after {
+    transform: translateY(-50%) rotate(-90deg);
+    text-decoration: none !important;
   }
 
   .contact {
     display: none;
   }
 
-  .hero {
-    height: auto;
+  /* ======== AJUSTES GERAIS ======== */
+  .header-container {
+    flex-wrap: wrap;
+    padding: 10px 15px;
   }
 
+  .logo {
+    order: 0;
+  }
+
+  header {
+    padding: 0; /* Reduzi o padding vertical */
+    height: 70px; /* Defini uma altura fixa */
+  }
+
+  .header-container {
+    padding: 5px 10px !important; /* Reduzir espa?amento interno */
+    min-height: 60px; /* Garantir altura m?nima */
+  }
+
+  .logo img {
+    width: 60px; /* Reduzi um pouco o tamanho da logo */
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    flex-direction: column;
+    height: auto;
+  }
+  
   .hero-carousel {
     height: 250px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: -10px; /* Compensar espa?o residual */
+  }
+  
+  .carousel-track {
+    height: 100%
   }
 
   .carousel-slide {
     height: 250px;
+    position: relative;
   }
 
   .carousel-btn {
     font-size: 1.2rem !important;
     padding: 5px 8px !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .prev-btn {
+    left: 2px;
+  }
+
+  .next-btn {
+    right: 2px;
+  }
+
+  .slide-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Garante o enquadramento correto */
   }
 
   .hero-description {
+    margin-top: 10px;
     padding: 15px;
   }
 }
 
-@media (max-width: 480px) {
-  .social-icons {
-    left: 40%;
-    gap: 6px;
-  }
 
-  .btn {
-    font-size: 11px;
-    padding: 3px 6px;
-  }
-
+@media(max-width: 480px) {
   nav a {
     font-size: .85rem;
+    padding: 5px 8px;
   }
 
+  .contact {
+    font-size: .85rem;
+  }
+  
   .hero-description h1 {
     font-size: 1.5rem;
   }
-
+  
   .hero-description p {
     font-size: 0.9rem;
   }
 }
+
