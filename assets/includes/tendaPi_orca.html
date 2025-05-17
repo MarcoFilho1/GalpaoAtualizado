@@ -1,112 +1,113 @@
 <!-- orcamento_rapido.html -->
 <link rel="stylesheet" href="./assets/includes/css/tenda_orca.css">
 
-<section id="orcamento-rapido">
-<div class="orcamento">
-  <div class="container">
-    <div class="header">
-      <div class="subtitle">VENDA E LOCAÇÃO
-        TENDA Piramidal
+<section id="orcamento">
+  <div class="orcamento">
+    <div class="container">
+      <div class="header">
+        <div class="subtitle">VENDA E LOCAÇÃO<br>TENDA Piramidal</div>
+        <h1 class="title">Orçamento Rápido</h1>
       </div>
 
-      <h1 class="title">Orçamento Rápido</h1>
+      <form 
+        id="orcamentoForm" 
+        action="https://formsubmit.co/ajax/comercial@petroscoberturas.com.br" 
+        method="POST"
+      >
+        <!-- Configurações do Formsubmit -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Novo Orçamento - Tenda Piramidal">
+        <input type="hidden" name="_next" value="http://localhost:5500/"> <!-- Tem que colocar a URL final do site pronto,para voltar a pagina inicial -->
+
+        <div class="form-group">
+          <select name="tipo" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="comprar">Comprar tenda</option>
+            <option value="alugar">Alugar tenda</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <select name="tamanho" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="2x2">2x2</option>
+              <option value="3x3">3x3</option>
+              <option value="4x4">4x4</option>
+              <option value="5x5">5x5</option>
+              <option value="6x6">6x6</option>
+              <option value="8x8">8x8</option>
+              <option value="10x10">10x10</option>
+              <option value="12x12">12x12</option>
+              <option value="15x15">15x15</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select name="quantidade" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="1">01 unidade</option>
+              <option value="2">02 unidades</option>
+              <option value="3">03 unidades</option>
+              <option value="4">04 unidades</option>
+              <option value="5">05 unidades</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="nome" placeholder="Nome" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" placeholder="E-mail" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="tel" name="celular" placeholder="Celular/WhatsApp" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="cep" placeholder="Cep" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <textarea name="mensagem" placeholder="Quer deixar uma mensagem?"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          SOLICITAR ORÇAMENTO
+          <span class="arrow-icon">&rarr;</span>
+        </button>
+      </form>
     </div>
 
-    <form 
-      id="orcamentoForm" 
-      action="https://formsubmit.co/gustavoafonso@gmail.com" 
-      method="POST"
-    >
-      <!-- Configurações do Formsubmit -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="Novo Orçamento - Tenda Piramidal">
-      <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+    <script>
+      document.getElementById('orcamentoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-      <div class="form-group">
-        <select name="tipo" required>
-          <option value="" disabled selected>Selecione</option>
-          <option value="comprar">Comprar tenda</option>
-          <option value="alugar">Alugar tenda</option>
-        </select>
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group">
-          <select name="tamanho" required>
-            <option value="" disabled selected>Selecione</option>
-            <option value="3x2">3x2</option>
-            <option value="3x3">3x3</option>
-            <option value="4x4">4x4</option>
-            <option value="5x5">5x5</option>
-            <option value="6x6">6x6</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <select name="quantidade" required>
-            <option value="" disabled selected>Selecione</option>
-            <option value="1">01 unidade</option>
-            <option value="2">02 unidades</option>
-            <option value="3">03 unidades</option>
-            <option value="4">04 unidades</option>
-            <option value="5">05 unidades</option>
-          </select>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <input type="text" name="nome" placeholder="Nome" required>
-      </div>
-      
-      <div class="form-group">
-        <input type="email" name="email" placeholder="E-mail" required>
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group">
-          <input type="tel" name="celular" placeholder="Celular/WhatsApp" required>
-        </div>
-        <div class="form-group">
-          <input type="text" name="cep" placeholder="Cep" required>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <textarea name="mensagem" placeholder="Quer deixar uma mensagem?"></textarea>
-      </div>
-      
-      <button type="submit" class="submit-btn">
-        SOLICITAR ORÇAMENTO
-        <span class="arrow-icon">→</span>
-      </button>
-    </form>
-  </div>
+        const formData = new FormData(this);
 
-  <script>
-    document.getElementById('orcamentoForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const formData = new FormData(this);
-      
-      fetch(this.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
-          this.reset();
-        } else {
-          throw new Error('Erro na requisição');
-        }
-      })
-      .catch(error => {
-        alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+        fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+            this.reset();
+          } else {
+            throw new Error('Erro na requisição');
+          }
+        })
+        .catch(error => {
+          alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+        });
       });
-    });
-  </script>
-</div>
+    </script>
+  </div>
 </section>
