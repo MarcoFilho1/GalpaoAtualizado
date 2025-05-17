@@ -287,7 +287,7 @@ nav a:hover::after { width:100% }
 */
 
 .vantagens {
-  background-image: url('assets/images/galpao-lona-grande.jpg'); /* troque aqui pela imagem certa */
+  background-image: url('assets/images/galpao-lona-grande.jpg');
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
@@ -299,7 +299,7 @@ nav a:hover::after { width:100% }
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* escurece o fundo */
+  background-color: rgba(0, 0, 0, 0.5); 
   z-index: 1;
 }
 
