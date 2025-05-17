@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         cookieButton.addEventListener('click', function() {
             cookieNotice.style.display = 'none';
-            localStorage.setItem('cookieAccepted', 'true');
+
+localStorage.setItem('cookieAccepted', 'true');
         });
     }
 
@@ -21,21 +22,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Configurar imagens de fundo
         slides.forEach(slide => {
             const bgUrl = slide.getAttribute('data-bg');
-            slide.style.setProperty('--bg', `url(/GalpaoAtualizado/${bgUrl})`);
+            slide.style.setProperty('--bg', url('/GalpaoAtualizado/${bgUrl}'));
         });
 
-        // Fun��o de movimento do carrossel
+        // Função de movimento do carrossel
         const moveTo = (i) => {
-            track.style.transform = `translateX(-${i * 100}%)`;
+            track.style.transform = translateX('-${i * 100}%');
             index = i;
         };
 
-        // Bot�o anterior
+        // Botão anterior
         document.querySelector('.prev-btn')?.addEventListener('click', () => {
             moveTo((index - 1 + slides.length) % slides.length);
         });
 
-        // Bot�o pr�ximo
+        // Botão próximo
         document.querySelector('.next-btn')?.addEventListener('click', () => {
             moveTo((index + 1) % slides.length);
         });
@@ -47,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay   = document.querySelector('.nav-overlay');
 
     // Helper para fechar menu + submenus
-    function closeMenu() {
+
+
+ function closeMenu() {
         nav.classList.remove('active');
         hamburger.classList.remove('fa-times');
         overlay.style.display = 'none';
@@ -86,7 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.dropdown > a').forEach(link => {
             link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
+   
+e.preventDefault();
                     const thisDropdown = this.parentElement;
                     // fecha todos os outros
                     document.querySelectorAll('.dropdown.active')
@@ -113,6 +117,50 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         });
     }
+
+    // ========= FETCH FORMULÁRIO DE CONTATO =========
+    const contatoContainer = document.getElementById('contato');
+    if (contatoContainer) {
+        fetch('assets/includes/contato.html')
+            .then(response => {
+                if (!response.ok) throw new Error(response.statusText);
+                return response.text();
+            })
+            .then(html => {
+                contatoContainer.innerHTML = html;
+
+ 
+
+ // se a URL tiver ?scrollTo=contato
+                const urlParams = new URLSearchParams(window.location.search);
+                const scrollTo = urlParams.get('scrollTo');
+                if (scrollTo === 'contato') {
+                    // pequeno delay para garantir renderização
+                    setTimeout(() => {
+                        const target = document.getElementById(scrollTo);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                contatoContainer.textContent = 'Erro ao carregar formulário.';
+            });
+    }
+
+// ========= VANTAGENS =========
+const vantagemButtons = document.querySelectorAll('.vantagens-lista button');
+const vantagemDescricoes = document.querySelectorAll('.vantagens-descricao .item');
+
+vantagemButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        // Remove "ativo" de todos os botões e descrições
+        vantagemButtons.forEach(b => b.classList.remove('ativo'));
+        vantagemDescricoes.forEach(d => d.classList.remove('ativo'));
+
+        // Ativa o botão clicado e a descrição correspondente
+        btn.classList.add('ativo');
+        vantagemDescricoes[index]?.classList.add('ativo');
+    });
 });
-
-
+}); 
