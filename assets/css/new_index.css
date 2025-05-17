@@ -394,6 +394,7 @@ nav a:hover::after {
   gap: 2rem; /* estava 3rem */
   animation: deslizar 30s linear infinite;
   align-items: center;
+  width: max-content;
 }
  
 .clientes__faixa img {
