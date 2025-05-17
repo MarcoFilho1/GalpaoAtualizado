@@ -24,18 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
             slide.style.setProperty('--bg', `url(/GalpaoAtualizado/${bgUrl})`);
         });
 
-        // Função de movimento do carrossel
+        // Funï¿½ï¿½o de movimento do carrossel
         const moveTo = (i) => {
             track.style.transform = `translateX(-${i * 100}%)`;
             index = i;
         };
 
-        // Botão anterior
+        // Botï¿½o anterior
         document.querySelector('.prev-btn')?.addEventListener('click', () => {
             moveTo((index - 1 + slides.length) % slides.length);
         });
 
-        // Botão próximo
+        // Botï¿½o prï¿½ximo
         document.querySelector('.next-btn')?.addEventListener('click', () => {
             moveTo((index + 1) % slides.length);
         });
@@ -114,3 +114,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
