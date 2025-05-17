@@ -1,69 +1,184 @@
-<link rel="stylesheet" href="assets/includes/css/contato.css">
-
-<!-- Seção de Contato -->
-<section id="contato">
-  <div class="container">
-    <h2>Fale Conosco</h2>
-    
-    <form action="https://formsubmit.co/comercial@petroscoberturas.com.br" method="POST">
-      
-      <!-- Proteção contra bots -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="http://localhost:5500/"> <!-- Tem que colocar a URL final do site pronto,para voltar a pagina inicial -->
-
-      <input type="text" name="_honey" style="display:none">
-
-      <div class="form-group">
-        <label>Empresa:<span class="required">*</span></label>
-        <input type="text" name="empresa" required>
-      </div>
-
-      <div class="form-group">
-        <label>Nome:<span class="required">*</span></label>
-        <input type="text" name="nome" required>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>E-mail:<span class="required">*</span></label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>Telefone:</label>
-          <input type="tel" name="telefone">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Como conheceu:<span class="required">*</span></label>
-          <select name="comoConheceu" required>
-            <option value="" disabled selected>-- Selecione --</option>
-            <option value="internet">Internet</option>
-            <option value="indicacao">Indicação</option>
-            <option value="redes-sociais">Redes Sociais</option>
-            <option value="outros">Outros</option>
-          </select>
+<!-- contato.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Personalizado - Petro's Coberturas</title>
+    <!-- CSS global -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Ícones e fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS específico só para contato -->
+    <link rel="stylesheet" href="contato.css">
+</head>
+<!-- adicionamos a classe de escopo aqui -->
+<body class="contato-page">
+    <div class="page-container">
+        <!-- Main title above containers -->
+        <div class="main-title">
+            <h1>Orçamento Personalizado</h1>
         </div>
 
-        <div class="form-group">
-          <label>Segmento:<span class="required">*</span></label>
-          <select name="segmento" required>
-            <option value="" disabled selected>-- Selecione --</option>
-            <option value="industrial">Industrial</option>
-            <option value="comercial">Comercial</option>
-            <option value="servicos">Serviços</option>
-            <option value="outros">Outros</option>
-          </select>
+        <div class="form-container">
+            <div class="form-grid">
+                <!-- Left Section - Contact Form -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h2>Fale Conosco</h2>
+                    </div>
+                    
+                    <form id="contactForm" action="https://formsubmit.co/comercial@petroscoberturas.com.br" method="POST">
+                        <!-- Proteção contra bots -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="http://localhost:5500/">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-group floating-label">
+                            <input type="text" id="empresa" name="empresa" required placeholder=" ">
+                            <label for="empresa">Empresa<span class="required">*</span></label>
+                        </div>
+
+                        <div class="form-group floating-label">
+                            <input type="text" id="nome" name="nome" required placeholder=" ">
+                            <label for="nome">Nome<span class="required">*</span></label>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group floating-label">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">E-mail<span class="required">*</span></label>
+                            </div>
+                            
+                            <div class="form-group floating-label">
+                                <input type="tel" id="telefone" name="telefone" placeholder=" ">
+                                <label for="telefone">Telefone</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group select-group">
+                                <label for="comoConheceu">Como conheceu<span class="required">*</span></label>
+                                <div class="select-wrapper">
+                                    <select id="comoConheceu" name="comoConheceu" required>
+                                        <option value="" disabled selected>-- Selecione --</option>
+                                        <option value="internet">Internet</option>
+                                        <option value="indicacao">Indicação</option>
+                                        <option value="redes-sociais">Redes Sociais</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group select-group">
+                                <label for="segmento">Segmento<span class="required">*</span></label>
+                                <div class="select-wrapper">
+                                    <select id="segmento" name="segmento" required>
+                                        <option value="" disabled selected>-- Selecione --</option>
+                                        <option value="industrial">Industrial</option>
+                                        <option value="comercial">Comercial</option>
+                                        <option value="servicos">Serviços</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group floating-label">
+                            <textarea id="mensagem" name="mensagem" rows="4" required placeholder=" "></textarea>
+                            <label for="mensagem">Mensagem<span class="required">*</span></label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Enviar</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Right Section - Contact Info -->
+                <div class="info-section">
+                    <div class="map-container">
+                        <h3>Google Maps</h3>
+                        <div class="map-embed">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098371826922!2d-46.65390548502164!3d-23.56507478469037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1621436434485!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>O telefone fixo</h4>
+                                <a href="tel:(11)1234-5678">(11) 1234-5678</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>O celular</h4>
+                                <a href="tel:(11)98765-4321">(11) 98765-4321</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Nosso e-mail</h4>
+                                <a href="mailto:comercial@petroscoberturas.com.br">comercial@petroscoberturas.com.br</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="card-content">
+                                <h4>Endereço</h4>
+                                <p>Rua Exemplo, 123 - São Paulo/SP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        
+        <div class="whatsapp-button">
+            <a href="https://wa.me/5511987654321" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
 
-      <div class="form-group">
-        <label>Mensagem:<span class="required">*</span></label>
-        <textarea name="mensagem" rows="3" required></textarea>
-      </div>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</section>
+    <script>
+        // Floating label effect
+        document.querySelectorAll('.floating-label input, .floating-label textarea').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.parentElement.classList.add('active');
+            });
+            
+            element.addEventListener('blur', () => {
+                if (element.value === '') {
+                    element.parentElement.classList.remove('active');
+                }
+            });
+            
+            // Check on load if fields have values
+            if (element.value !== '') {
+                element.parentElement.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
