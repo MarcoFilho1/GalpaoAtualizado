@@ -133,6 +133,7 @@ nav a:hover::after { width:100% }
   font-size: 1rem;
   color: #333;
   font-weight: 1000;
+  text-align: left;
 }
 
 /* COOKIES */
