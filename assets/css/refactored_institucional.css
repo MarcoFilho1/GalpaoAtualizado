@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap');
 
-/* ======== AnimaÐ·Ð³o FadeIn ======== */
+/* ======== Anima??o FadeIn ======== */
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 
 /* ======== RESET & BASE ======== */
@@ -13,7 +13,7 @@ body {
   padding-top:110px;
 }
 
-/* ======== CABEÐ—ALHO ======== */
+/* ======== CABE?ALHO ======== */
 header {
   position:fixed; top:0; width:100%; z-index:1000;
   background:#000; color:#fff; padding:12px 0;
@@ -83,21 +83,266 @@ nav a:hover::after { width:100% }
 
 
 /* ======================== */
-/*      CONTEÃšDO PRINCIPAL */
+/*      CONTEÚDO PRINCIPAL */
 /* ======================== */
-.intro-container {
+/* .intro-container {
+  background: #f8f9fa;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #1f94f4;
+  display: block; /* Alterado de flex para block 
+} 
+*/
+
+/* ======= HERO BACKGROUND ======= */
+.hero-bg {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  background: 
+    linear-gradient(rgba(0, 51, 102, 0.3), rgba(0, 0, 0, 0.7)),
+    url('assets/images/galpao-lona-grande.jpg') center/cover fixed;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 110px;
+  transition: background-position 0.3s ease;
+}
+
+.hero-bg.scroll-active {
+  background-size: 105%;
+}
+
+
+.hero-content {
+  color: white;
+  padding: 20px;
+  max-width: 1200px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  animation: fadeIn 1.5s ease-out;
+}
+
+
+.hero-bg h1 {
+  font-size: 4rem;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
   margin-bottom: 30px;
-  flex-wrap: wrap;
+}
+
+.hero-text {
+  font-size: 1.4rem;
+  opacity: 0.95;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .hero-bg {
+    height: 60vh;
+    min-height: 400px;
+    background-attachment: scroll;
+  }
+  
+  .hero-bg h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-bg {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .hero-bg h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-text {
+    font-size: 1.1rem;
+  }
+}
+
+
+.texto-intro {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.texto-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #003366;
+  justify-content: center;
+}
+
+/* Seção de Dados Técnicos */
+.institucional-dados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.dado-tecnico {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+
+.dado-tecnico:hover {
+  transform: translateY(-5px);
+}
+
+.dado-tecnico i {
+  font-size: 2.5rem;
+  color: #1f94f4;
+  margin-bottom: 15px;
+}
+
+.dado-tecnico h3 {
+  color: #003366;
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+/* Certificações */
+.certificacoes {
+  background: #003366;
+  color: white;
+  padding: 40px 20px;
+  margin: 50px 0;
+  border-radius: 10px;
+}
+
+.certificacoes h2 {
+  color: #1f94f4;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.certificacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: center;
+}
+
+.certificado-item {
+  text-align: center;
   padding: 20px;
 }
 
-.texto-intro {
-  max-width: 60%;
+/* Processos de Qualidade */
+.processos-qualidade {
+  border-left: 4px solid #1f94f4;
+  padding-left: 25px;
+  margin: 50px 0;
 }
+
+.processos-qualidade ol {
+  list-style-type: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+.processos-qualidade li {
+  counter-increment: step-counter;
+  margin: 20px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.processos-qualidade li::before {
+  content: counter(step-counter);
+  color: white;
+  background: #1f94f4;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 50%;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+/* Ajustes nos Cards Existente */
+.section-cards .card {
+  background: #003366;
+  color: white;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.section-cards .card h2 {
+  color: #1f94f4;
+}
+
+.section-cards .card h2::before {
+  background-color: white;
+}
+
+/* CTA Específico para Institucional */
+.cta-institucional {
+  background: #003366;
+  border: 2px solid #1f94f4;
+  border-radius: 10px;
+}
+
+.cta-institucional .botao {
+  background: #1f94f4;
+  color: white;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.cta-institucional .botao:hover {
+  background: white;
+  color: #1f94f4;
+  border-color: #1f94f4;
+}
+
+@media (max-width: 768px) {
+  .texto-intro h1 {
+    font-size: 2rem;
+  }
+  
+  .dado-tecnico {
+    margin: 15px 0;
+  }
+  
+  .institucional-dados {
+    grid-template-columns: 1fr;
+  }
+  
+  .processos-qualidade {
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  .processos-qualidade li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .processos-qualidade li::before {
+    margin-bottom: 10px;
+  }
+}
+
 
 .img-intro {
   max-width: 35%;
@@ -153,11 +398,11 @@ strong .destaque {
   min-width: 300px;
 }
 
-.intro-img {
+/* .intro-img {
   flex: 1;
   min-width: 200px;
   max-width: 400px;
-}
+} */
 
 .intro-img img {
   width: 100%;
@@ -217,7 +462,7 @@ strong .destaque {
 
 
 /* ======================== */
-/*      ANIMAÃ‡Ã•ES / MISC   */
+/*      ANIMAÇÕES / MISC   */
 /* ======================== */
 @keyframes fadeIn {
   0% { opacity: 0; }
