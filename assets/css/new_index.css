@@ -373,6 +373,8 @@ nav a:hover::after {
   background-color: #f8f8f8;
   text-align: center;
   overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 .clientes__titulo {
@@ -424,10 +426,11 @@ nav a:hover::after {
 */
 
 .vantagens {
-  background-image: url('assets/images/galpao-lona-grande.jpg');
+  background-image: url('/assets/images/galpao-lona-grande.jpg');
   background-size: cover;
   background-position: center;
-  padding: 60px 20px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   color: #fff;
   position: relative;
 }
@@ -479,6 +482,13 @@ nav a:hover::after {
   text-align: center;
 }
 
+.vantagens__lista li.active {
+  background-color: #1f94f4;
+  color: white;
+  border-radius: 4px;
+}
+
+
 .vantagens__lista li:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
@@ -508,7 +518,8 @@ nav a:hover::after {
 */
 
 .produtos {
-  padding: 4rem 2rem;
+  padding-top: 100px;
+  padding-bottom: 50px;
   background-color: #fff;
   text-align: center;
 }
