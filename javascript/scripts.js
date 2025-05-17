@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // ========= COOKIE NOTICE =========
     const cookieNotice = document.querySelector('.cookie-notice');
     if (cookieNotice) {
@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!localStorage.getItem('cookieAccepted')) {
             cookieNotice.style.display = 'block';
         }
-        cookieButton.addEventListener('click', function() {
+        cookieButton.addEventListener('click', function () {
             cookieNotice.style.display = 'none';
-
-localStorage.setItem('cookieAccepted', 'true');
+            localStorage.setItem('cookieAccepted', 'true');
         });
     }
 
@@ -22,12 +21,12 @@ localStorage.setItem('cookieAccepted', 'true');
         // Configurar imagens de fundo
         slides.forEach(slide => {
             const bgUrl = slide.getAttribute('data-bg');
-            slide.style.setProperty('--bg', url('/GalpaoAtualizado/${bgUrl}'));
+            slide.style.setProperty('--bg', `url('/GalpaoAtualizado/${bgUrl}')`);
         });
 
         // Função de movimento do carrossel
         const moveTo = (i) => {
-            track.style.transform = translateX('-${i * 100}%');
+            track.style.transform = `translateX(-${i * 100}%)`;
             index = i;
         };
 
@@ -44,13 +43,10 @@ localStorage.setItem('cookieAccepted', 'true');
 
     // ========= MENU HAMBURGUER =========
     const hamburger = document.querySelector('.hamburger');
-    const nav       = document.querySelector('nav');
-    const overlay   = document.querySelector('.nav-overlay');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.nav-overlay');
 
-    // Helper para fechar menu + submenus
-
-
- function closeMenu() {
+    function closeMenu() {
         nav.classList.remove('active');
         hamburger.classList.remove('fa-times');
         overlay.style.display = 'none';
@@ -59,7 +55,6 @@ localStorage.setItem('cookieAccepted', 'true');
     }
 
     if (hamburger && nav) {
-        // Abre / fecha menu
         hamburger.addEventListener('click', e => {
             e.stopPropagation();
             if (nav.classList.contains('active')) {
@@ -71,51 +66,33 @@ localStorage.setItem('cookieAccepted', 'true');
             }
         });
 
-        // Fechar ao clicar fora
         document.addEventListener('click', e => {
             if (!e.target.closest('nav') && !e.target.closest('.hamburger')) {
                 closeMenu();
             }
         });
 
-        // Fechar ao rolar
         window.addEventListener('scroll', () => {
             if (nav.classList.contains('active')) {
                 closeMenu();
             }
         });
 
-        // Dropdown mobile (toggle exclusivo)
         document.querySelectorAll('.dropdown > a').forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 if (window.innerWidth <= 768) {
-   
-e.preventDefault();
+                    e.preventDefault();
                     const thisDropdown = this.parentElement;
-                    // fecha todos os outros
                     document.querySelectorAll('.dropdown.active')
                         .forEach(dd => {
                             if (dd !== thisDropdown) dd.classList.remove('active');
                         });
-                    // abre/fecha o clicado
                     thisDropdown.classList.toggle('active');
                 }
             });
         });
 
-        // Fechar menu ao clicar em links (exceto dropdown-toggle)
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', e => {
-                if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
-                    closeMenu();
-                }
-            });
-        });
-
-        // Fechar ao clicar no overlay
-        overlay.addEventListener('click', () => {
-            closeMenu();
-        });
+        overlay.addEventListener('click', closeMenu);
     }
 
     // ========= FETCH FORMULÁRIO DE CONTATO =========
@@ -128,14 +105,9 @@ e.preventDefault();
             })
             .then(html => {
                 contatoContainer.innerHTML = html;
-
- 
-
- // se a URL tiver ?scrollTo=contato
                 const urlParams = new URLSearchParams(window.location.search);
                 const scrollTo = urlParams.get('scrollTo');
                 if (scrollTo === 'contato') {
-                    // pequeno delay para garantir renderização
                     setTimeout(() => {
                         const target = document.getElementById(scrollTo);
                         if (target) target.scrollIntoView({ behavior: 'smooth' });
@@ -148,19 +120,17 @@ e.preventDefault();
             });
     }
 
-// ========= VANTAGENS =========
-const vantagemButtons = document.querySelectorAll('.vantagens-lista button');
-const vantagemDescricoes = document.querySelectorAll('.vantagens-descricao .item');
+    // ========= VANTAGENS =========
+    const vantagemButtons = document.querySelectorAll('.vantagens__lista li');
+    const vantagemDescricoes = document.querySelectorAll('.vantagens__descricao .descricao-item');
 
-vantagemButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        // Remove "ativo" de todos os botões e descrições
-        vantagemButtons.forEach(b => b.classList.remove('ativo'));
-        vantagemDescricoes.forEach(d => d.classList.remove('ativo'));
+    vantagemButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            vantagemButtons.forEach(b => b.classList.remove('ativo'));
+            vantagemDescricoes.forEach(d => d.classList.remove('ativo'));
 
-        // Ativa o botão clicado e a descrição correspondente
-        btn.classList.add('ativo');
-        vantagemDescricoes[index]?.classList.add('ativo');
-    });
+            btn.classList.add('ativo');
+            vantagemDescricoes[index]?.classList.add('ativo');
+        });
+    });
 });
-}); 
