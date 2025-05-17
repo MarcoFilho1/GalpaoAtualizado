@@ -141,4 +141,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 contatoContainer.textContent = 'Erro ao carregar formulário.';
             });
     }
+
+// ========= VANTAGENS =========
+const vantagemButtons = document.querySelectorAll('.vantagens-lista button');
+const vantagemDescricoes = document.querySelectorAll('.vantagens-descricao .item');
+
+vantagemButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        // Remove "ativo" de todos os botões e descrições
+        vantagemButtons.forEach(b => b.classList.remove('ativo'));
+        vantagemDescricoes.forEach(d => d.classList.remove('ativo'));
+
+        // Ativa o botão clicado e a descrição correspondente
+        btn.classList.add('ativo');
+        vantagemDescricoes[index]?.classList.add('ativo');
+    });
 });
+});
+
+
+
+
+
