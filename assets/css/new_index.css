@@ -397,8 +397,8 @@ nav a:hover::after {
 }
  
 .clientes__faixa img {
-  height: 300px;
-  max-width: 400px;
+  height: 125px;
+  max-width: 150px;
   width: auto;
   object-fit: contain;
   filter: none;
