@@ -296,6 +296,143 @@ nav a:hover::after {
 .hero-description h1 { font-size:2.2rem; margin-bottom:20px; color:#1a1a1a }
 .hero-description p { font-size:1rem; margin-bottom:25px; color:#444 }
 
+
+/* ======== QUEM SOMOS ======== */
+.quemsomos {
+  background: linear-gradient(45deg, #003366, #1f94f4);
+  color: white;
+  padding: 80px 20px;
+}
+
+.quemsomos__container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quemsomos__imagem {
+  flex: 0 1 45%; /* Não cresce, encolhe até 45% */
+  min-width: 300px; /* Largura mínima */
+  max-width: 500px; /* Largura máxima */
+}
+
+
+.quemsomos__imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.quemsomos__conteudo {
+  flex: 1;
+}
+
+.quemsomos__conteudo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.quemsomos__conteudo p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Valores */
+.quemsomos__valores {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.valor {
+  background: white;
+  color: #003366;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.valor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.valor i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1f94f4;
+}
+
+.valor h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.valor p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .quemsomos__container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .quemsomos__valores {
+    flex-direction: column;
+  }
+}
+
+
+/* ====== DESTAQUES E VALORES ======== */
+.destaques {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.destaques li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.destaques li::before {
+  content: "";
+  color: #1f94f4;
+  position: absolute;
+  left: -20px;
+}
+
+.valores-lista p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.valores-lista i {
+  color: #1f94f4;
+  min-width: 25px;
+  text-align: center;
+}
+
+
+
+
+
+
 /* ========== SECTIONS: PRODUTOS, CLIENTES, VANTAGENS ==========
 
 */
