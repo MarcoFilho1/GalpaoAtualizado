@@ -536,7 +536,7 @@ nav a:hover::after {
  
 .clientes__faixa img {
   height: 125px;
-  max-width: 150px;
+  width: 150px;
   width: auto;
   object-fit: contain;
   filter: none;
@@ -555,7 +555,7 @@ nav a:hover::after {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-1 * var(--faixa-width)));
   }
 }
 

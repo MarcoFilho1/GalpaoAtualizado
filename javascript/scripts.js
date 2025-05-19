@@ -153,4 +153,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    window.addEventListener('load', () => {
+        const faixa = document.getElementById('clientes-faixa');
+        const faixaWidth = faixa.offsetWidth / 2;
+
+        faixa.style.setProperty('--faixa-width', `${faixaWidth}px`);
+
+        faixa.style.animation = `deslizar linear infinite 30s`;
+    });
+
 });
