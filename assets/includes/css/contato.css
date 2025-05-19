@@ -1,7 +1,7 @@
 /* Base Styles */
 
 :root {
-    --primary-color: #ffcc00;
+    --primary-color: #ffffff;
     --primary-dark: #e6b800;
     --secondary-color: #0a2463;
     --accent-color: #3e92cc;
@@ -26,14 +26,24 @@
 
 html {
     scroll-behavior: smooth;
+    
 }
 
-.page-container  body {
+body {
+    background-color: var(--darker-bg);
+} 
+
+.page-container {
     font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
     background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
     color: var(--light-text);
     line-height: 1.6;
     min-height: 100vh;
+    border-radius: var(--border-radius);
 }
 
 a {
@@ -44,12 +54,13 @@ a {
 
 a:hover {
     color: var(--primary-color);
+    
 }
 
 /* Layout */
 .page-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 80px;
     padding: 2rem 1rem;
     position: relative;
 }
