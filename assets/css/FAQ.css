@@ -217,3 +217,49 @@ nav a:hover::after {
 .contact span {
   color: white;
 }
+
+
+.faq-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #145f9d;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #145f9d;
+    color: white;
+    text-align: left;
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.faq-question:hover {
+    background-color: #1f94f4;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.faq-answer.visible {
+    display: block;
+}

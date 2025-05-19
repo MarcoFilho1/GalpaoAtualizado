@@ -163,4 +163,15 @@ document.addEventListener('DOMContentLoaded', function () {
         faixa.style.animation = `deslizar linear infinite 30s`;
     });
 
+    
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('i');
+            answer.classList.toggle('visible');
+            icon.classList.toggle('fa-chevron-up');
+        });
+    });
+
 });
