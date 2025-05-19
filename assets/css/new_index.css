@@ -564,7 +564,7 @@ nav a:hover::after {
 */
 
 .vantagens {
-  background-image: url('/assets/images/galpao-lona-grande.jpg');
+  background-image: url('../images/galpao-lona-grande.jpg');
   background-size: cover;
   background-position: center;
   padding-top: 100px;
@@ -621,6 +621,7 @@ nav a:hover::after {
 }
 
 .vantagens__lista li.active {
+  font-weight: bold;
   background-color: #1f94f4;
   color: white;
   border-radius: 4px;
@@ -634,7 +635,14 @@ nav a:hover::after {
 .vantagens__descricao {
   flex: 2;
   max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px; /* Altura mínima para centralizar */
+  border-radius: 8px;
+  padding: 20px;
   color: #fff;
+  text-align: center;
 }
 
 .descricao-item {
@@ -644,6 +652,10 @@ nav a:hover::after {
   border-radius: 10px;
   animation: fadeIn 0.3s ease;
   color: #fff;
+}
+
+.descricao-item.ativo {
+  display: block;
 }
 
 @keyframes fadeIn {

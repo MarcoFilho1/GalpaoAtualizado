@@ -134,13 +134,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const vantagemButtons = document.querySelectorAll('.vantagens__lista li');
     const vantagemDescricoes = document.querySelectorAll('.vantagens__descricao .descricao-item');
 
-    vantagemButtons.forEach((btn, index) => {
+    vantagemButtons.forEach(btn => {
         btn.addEventListener('click', () => {
+            // Remove a classe "ativo" de todos os botões e descrições
             vantagemButtons.forEach(b => b.classList.remove('ativo'));
             vantagemDescricoes.forEach(d => d.classList.remove('ativo'));
 
+            // Adiciona a classe "ativo" ao botão clicado
             btn.classList.add('ativo');
-            vantagemDescricoes[index]?.classList.add('ativo');
+
+            // Pega o valor do data-info e encontra o parágrafo correspondente
+            const info = btn.getAttribute('data-info');
+            const descricao = document.getElementById(info);
+
+            // Adiciona a classe "ativo" à descrição correspondente
+            if (descricao) {
+                descricao.classList.add('ativo');
+            }
         });
     });
 });
