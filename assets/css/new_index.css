@@ -536,7 +536,6 @@ nav a:hover::after {
  
 .clientes__faixa img {
   height: 125px;
-  width: 150px;
   width: auto;
   object-fit: contain;
   filter: none;
