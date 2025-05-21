@@ -173,5 +173,6 @@ document.addEventListener('DOMContentLoaded', function () {
             icon.classList.toggle('fa-chevron-up');
         });
     });
+    
 
 });
