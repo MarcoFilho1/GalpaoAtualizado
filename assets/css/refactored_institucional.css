@@ -322,6 +322,224 @@ nav a:hover::after {
   justify-content: center;
 }
 
+
+/* Seção Linha do Tempo */
+.timeline {
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #003366
+}
+
+.timeline container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item .year{
+  font-weight: bold;
+  color: #1f94f4;
+  font-size: 1.1rem;
+}
+
+
+/* DEPOIMENTOS ATUALIZADO */
+.depoimentos {
+  background-color: #003366;
+  padding: 4rem 2rem;
+}
+
+.depoimentos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.depoimentos-header .subtitulo {
+  color: #8fb3d3;
+  font-size: 1.1rem;
+}
+
+.depoimentos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.depoimento-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-5px);
+}
+
+.destaque {
+  border: 2px solid #1f94f4;
+  box-shadow: 0 8px 25px rgba(31, 148, 244, 0.3);
+}
+
+.avaliacao {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.avaliacao i {
+  margin: 0 2px;
+}
+
+.texto-depoimento {
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cliente-info {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.detalhes-cliente {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome {
+  font-weight: 600;
+  color: #003366;
+}
+
+.empresa {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.projeto {
+  font-size: 0.8rem;
+  color: #1f94f4;
+  margin-top: 0.5rem;
+}
+
+.selo-recomenda {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #1f94f4;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.depoimentos-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.controle {
+  background: none;
+  border: 2px solid #1f94f4;
+  color: #1f94f4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controle:hover {
+  background: #1f94f4;
+  color: white;
+}
+
+.indicadores {
+  display: flex;
+  gap: 10px;
+}
+
+.indicador {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #8fb3d3;
+  cursor: pointer;
+}
+
+.indicador.ativo {
+  background: #1f94f4;
+}
+
+.cta-depoimentos {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-depoimentos p {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .depoimentos-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .depoimento-card {
+    margin: 0 15px;
+  }
+}
+
+/* Seção Sustentabilidade */
+.sustentabilidade {
+  background-color: #f1f9ff;
+  padding: 50px 20px;
+  text-align: center;
+  border-left: 5px solid #1f94f4;
+  border-radius: 8px;
+  margin: 60px 0;
+}
+
+.sustentabilidade h2 {
+  color:#003366;
+  margin-bottom: 20px;
+}
+
+.sustentabilidade p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+
+
 /* Seção de Dados Técnicos */
 .institucional-dados {
   display: grid;
@@ -509,7 +727,7 @@ h1::before {
   margin-right: 10px;
 }
 
-strong .destaque {
+strong .destaque-subtitle {
   color: #1f94f4;
 }
 
